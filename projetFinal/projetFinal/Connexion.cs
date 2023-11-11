@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace projetFinal
 {
-    public partial class Form1 : Form
+    public partial class Connexion : Form
     {
-        public Form1()
+        public Connexion()
         {
             InitializeComponent();
+        }
+
+        private void btConnexion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
