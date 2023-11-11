@@ -1,0 +1,11 @@
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.exe.config
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.exe
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.pdb
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.AssemblyReference.cache
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Connexion.resources
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Properties.Resources.resources
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.GenerateResource.cache
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.CoreCompileInputs.cache
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.exe
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.pdb
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Menu.resources

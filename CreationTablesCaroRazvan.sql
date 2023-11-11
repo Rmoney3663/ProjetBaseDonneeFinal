@@ -224,5 +224,5 @@ VALUES (1, 'Administrateur', 'Il n''y en a qu''un et son numéro est 1'), (2, 'Di
 
 PRINT  'Ajouts de l''administrateur...'
 INSERT INTO Employes
-VALUES (1,'Password1','St-Pierre','George','H',40,888,'Rue des Mésanges','Vaudreuil',
+VALUES (1,'Password1*','St-Pierre','George','H',40,888,'Rue des Mésanges','Vaudreuil',
 'QC','J7J2J7','4444043234','8889942345','georgep2@gmail.com', 35.55 , 1, 'Admin');

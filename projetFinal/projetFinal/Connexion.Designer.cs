@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.resultat = new System.Windows.Forms.Label();
             this.btConnexion = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.tbNoEmploye = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbNoEmploye = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNoEmploye)).BeginInit();
             this.SuspendLayout();
             // 
             // resultat
             // 
             this.resultat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resultat.ForeColor = System.Drawing.Color.Red;
             this.resultat.Location = new System.Drawing.Point(105, 347);
             this.resultat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.resultat.Name = "resultat";
@@ -89,17 +94,10 @@
             this.tbPassword.Location = new System.Drawing.Point(105, 237);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(284, 30);
             this.tbPassword.TabIndex = 9;
-            // 
-            // tbNoEmploye
-            // 
-            this.tbNoEmploye.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNoEmploye.Location = new System.Drawing.Point(105, 166);
-            this.tbNoEmploye.Margin = new System.Windows.Forms.Padding(4);
-            this.tbNoEmploye.Name = "tbNoEmploye";
-            this.tbNoEmploye.Size = new System.Drawing.Size(284, 30);
-            this.tbNoEmploye.TabIndex = 8;
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // label1
             // 
@@ -113,21 +111,44 @@
             this.label1.Text = "Connexion";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // errMessage
+            // 
+            this.errMessage.ContainerControl = this;
+            // 
+            // tbNoEmploye
+            // 
+            this.tbNoEmploye.Location = new System.Drawing.Point(105, 176);
+            this.tbNoEmploye.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tbNoEmploye.Name = "tbNoEmploye";
+            this.tbNoEmploye.Size = new System.Drawing.Size(143, 22);
+            this.tbNoEmploye.TabIndex = 14;
+            this.tbNoEmploye.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(489, 450);
+            this.Controls.Add(this.tbNoEmploye);
             this.Controls.Add(this.resultat);
             this.Controls.Add(this.btConnexion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.tbNoEmploye);
             this.Controls.Add(this.label1);
             this.Name = "Connexion";
             this.Text = "Connexion";
+            ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNoEmploye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,8 +161,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbPassword;
-        private System.Windows.Forms.TextBox tbNoEmploye;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.NumericUpDown tbNoEmploye;
     }
 }
 
