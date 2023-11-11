@@ -81,6 +81,7 @@
             this.btnGestionEmp.TabIndex = 0;
             this.btnGestionEmp.Text = "Gestion des employés";
             this.btnGestionEmp.UseVisualStyleBackColor = false;
+            this.btnGestionEmp.Click += new System.EventHandler(this.btnGestionEmp_Click);
             // 
             // label1
             // 

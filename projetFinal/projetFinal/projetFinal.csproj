@@ -64,6 +64,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Options\GestionEmployes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\GestionEmployes.Designer.cs">
+      <DependentUpon>GestionEmployes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Connexion.resx">
