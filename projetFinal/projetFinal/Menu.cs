@@ -17,19 +17,22 @@ namespace projetFinal
             InitializeComponent();
         }
 
-        private void btnGestionEmp_Click(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
-            Options.GestionEmployes gestionEmployes = new Options.GestionEmployes();
-            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel1.Controls.Clear();
 
-            Panel panneau = new Panel();
-            panneau.Dock = DockStyle.Fill;
-            gestionEmployes.TopLevel = false;
-            panneau.Controls.Add(gestionEmployes);
+            Choix options = new Choix();
 
-            splitContainer1.Panel2.Controls.Add(panneau);
+            // Set the size and location of the content form
+            options.TopLevel = false;
+            options.FormBorderStyle = FormBorderStyle.None;
+            options.Dock = DockStyle.Fill;
 
-            gestionEmployes.Show();
+            // Add the content form to the right panel
+            splitContainer1.Panel1.Controls.Add(options);
+
+            // Show the content form
+            options.Show();
         }
     }
 }
