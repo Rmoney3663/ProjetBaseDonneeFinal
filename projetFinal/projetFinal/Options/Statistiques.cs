@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.ActivationContext;
 
 namespace projetFinal.Options
 {
-    public partial class GestionEmployes : Form
+    public partial class Statistiques : Form
     {
-        public Panel panel1;
-
-        public GestionEmployes()
+        public Statistiques()
         {
             InitializeComponent();
-        }
-
-        private void GestionEmployes_Load(object sender, EventArgs e)
-        {
         }
     }
 }

@@ -51,6 +51,7 @@
             this.btnSortie.TabIndex = 23;
             this.btnSortie.Text = "Sortie du système";
             this.btnSortie.UseVisualStyleBackColor = true;
+            this.btnSortie.Click += new System.EventHandler(this.btnSortie_Click);
             // 
             // btnDeconnexion
             // 
@@ -61,6 +62,7 @@
             this.btnDeconnexion.TabIndex = 22;
             this.btnDeconnexion.Text = "Déconnexion du système";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
+            this.btnDeconnexion.Click += new System.EventHandler(this.btnDeconnexion_Click);
             // 
             // btnVisualisationStats
             // 
@@ -73,6 +75,7 @@
             this.btnVisualisationStats.TabIndex = 21;
             this.btnVisualisationStats.Text = "Visualisation des statistiques";
             this.btnVisualisationStats.UseVisualStyleBackColor = false;
+            this.btnVisualisationStats.Click += new System.EventHandler(this.btnVisualisationStats_Click);
             // 
             // btnVisualisationRapports
             // 
@@ -85,6 +88,7 @@
             this.btnVisualisationRapports.TabIndex = 20;
             this.btnVisualisationRapports.Text = "Visualisation des rapports";
             this.btnVisualisationRapports.UseVisualStyleBackColor = false;
+            this.btnVisualisationRapports.Click += new System.EventHandler(this.btnVisualisationRapports_Click);
             // 
             // btnInscriptionDepense
             // 
@@ -97,6 +101,7 @@
             this.btnInscriptionDepense.TabIndex = 19;
             this.btnInscriptionDepense.Text = "Inscription d\'une dépense";
             this.btnInscriptionDepense.UseVisualStyleBackColor = false;
+            this.btnInscriptionDepense.Click += new System.EventHandler(this.btnInscriptionDepense_Click);
             // 
             // btnInscriptionPartie
             // 
@@ -109,6 +114,7 @@
             this.btnInscriptionPartie.TabIndex = 18;
             this.btnInscriptionPartie.Text = "Inscription d\'une partie de golf jouée";
             this.btnInscriptionPartie.UseVisualStyleBackColor = false;
+            this.btnInscriptionPartie.Click += new System.EventHandler(this.btnInscriptionPartie_Click);
             // 
             // btnModifPrixEtDepenses
             // 
@@ -121,6 +127,7 @@
             this.btnModifPrixEtDepenses.TabIndex = 17;
             this.btnModifPrixEtDepenses.Text = "Modification des prix et des dépenses d\'abonnement";
             this.btnModifPrixEtDepenses.UseVisualStyleBackColor = false;
+            this.btnModifPrixEtDepenses.Click += new System.EventHandler(this.btnModifPrixEtDepenses_Click);
             // 
             // btnMiseAJourAbo
             // 
@@ -133,6 +140,7 @@
             this.btnMiseAJourAbo.TabIndex = 16;
             this.btnMiseAJourAbo.Text = "Mise à jour des abonnés (abonné principal et dépendants)";
             this.btnMiseAJourAbo.UseVisualStyleBackColor = false;
+            this.btnMiseAJourAbo.Click += new System.EventHandler(this.btnMiseAJourAbo_Click);
             // 
             // btnReabonnement
             // 
@@ -145,6 +153,7 @@
             this.btnReabonnement.TabIndex = 15;
             this.btnReabonnement.Text = "Réabonnement";
             this.btnReabonnement.UseVisualStyleBackColor = false;
+            this.btnReabonnement.Click += new System.EventHandler(this.btnReabonnement_Click);
             // 
             // btnAbonnement
             // 
@@ -157,6 +166,7 @@
             this.btnAbonnement.TabIndex = 14;
             this.btnAbonnement.Text = "Abonnement";
             this.btnAbonnement.UseVisualStyleBackColor = false;
+            this.btnAbonnement.Click += new System.EventHandler(this.btnAbonnement_Click);
             // 
             // label1
             // 
@@ -181,7 +191,7 @@
             this.btnGestionEmp.UseVisualStyleBackColor = false;
             this.btnGestionEmp.Click += new System.EventHandler(this.btnGestionEmp_Click);
             // 
-            // Menu
+            // Choix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +208,7 @@
             this.Controls.Add(this.btnAbonnement);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGestionEmp);
-            this.Name = "Menu";
+            this.Name = "Choix";
             this.Text = "Menu";
             this.ResumeLayout(false);
             this.PerformLayout();

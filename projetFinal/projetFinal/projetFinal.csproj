@@ -70,11 +70,59 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Options\Abonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\Abonnement.Designer.cs">
+      <DependentUpon>Abonnement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Options\GestionEmployes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Options\GestionEmployes.Designer.cs">
       <DependentUpon>GestionEmployes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\InscriptionDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\InscriptionDepense.Designer.cs">
+      <DependentUpon>InscriptionDepense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\InscriptionPartieJouee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\InscriptionPartieJouee.Designer.cs">
+      <DependentUpon>InscriptionPartieJouee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\MiseAJourAbos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\MiseAJourAbos.Designer.cs">
+      <DependentUpon>MiseAJourAbos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ModifPrixDepenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\ModifPrixDepenses.Designer.cs">
+      <DependentUpon>ModifPrixDepenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Rapports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\Rapports.Designer.cs">
+      <DependentUpon>Rapports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Reabonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\Reabonnement.Designer.cs">
+      <DependentUpon>Reabonnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\Statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\Statistiques.Designer.cs">
+      <DependentUpon>Statistiques.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
