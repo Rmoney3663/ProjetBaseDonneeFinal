@@ -38,6 +38,7 @@ namespace projetFinal
                         booEmpExiste = true;
                         Menu menu = new Menu();
                         this.Hide();
+                        menu.LoginUser = int.Parse(tbNoEmploye.Text);
                         menu.ShowDialog();
                         this.Show();
                     }
