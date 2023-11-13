@@ -156,6 +156,9 @@
     <EmbeddedResource Include="GestionEmploye\ModifierEmploye.resx">
       <DependentUpon>ModifierEmploye.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmploye\SupprimerEmploye.resx">
+      <DependentUpon>SupprimerEmploye.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

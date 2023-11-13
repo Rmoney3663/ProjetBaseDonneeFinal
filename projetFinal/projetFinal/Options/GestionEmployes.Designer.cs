@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,21 +50,13 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.btnSupprimer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // employesBindingSource
-            // 
-            this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
             // 
             // employesDataGridView
             // 
@@ -73,7 +69,7 @@
             this.employesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.employesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.No,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -88,13 +84,13 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
+            this.type,
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19});
             this.employesDataGridView.DataSource = this.employesBindingSource;
             this.employesDataGridView.Location = new System.Drawing.Point(11, 51);
-            this.employesDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employesDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.employesDataGridView.Name = "employesDataGridView";
             this.employesDataGridView.ReadOnly = true;
             this.employesDataGridView.RowHeadersWidth = 51;
@@ -104,15 +100,62 @@
             this.employesDataGridView.Size = new System.Drawing.Size(606, 332);
             this.employesDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
+            // label1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
-            this.dataGridViewTextBoxColumn1.FillWeight = 564.1329F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "No";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 46;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Gestion des employés";
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouter.Location = new System.Drawing.Point(40, 413);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(152, 32);
+            this.btnAjouter.TabIndex = 2;
+            this.btnAjouter.Text = "Ajout d’un employé";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifier.Location = new System.Drawing.Point(198, 413);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(187, 32);
+            this.btnModifier.TabIndex = 3;
+            this.btnModifier.Text = "Modification d’un employé";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.Location = new System.Drawing.Point(391, 413);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(192, 32);
+            this.btnSupprimer.TabIndex = 4;
+            this.btnSupprimer.Text = "Suppression d’un employé";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // employesBindingSource
+            // 
+            this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
+            // 
+            // No
+            // 
+            this.No.DataPropertyName = "No";
+            this.No.FillWeight = 564.1329F;
+            this.No.HeaderText = "No";
+            this.No.MinimumWidth = 6;
+            this.No.Name = "No";
+            this.No.ReadOnly = true;
+            this.No.Width = 46;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -254,15 +297,15 @@
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Width = 98;
             // 
-            // dataGridViewTextBoxColumn16
+            // type
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "NoTypeEmploye";
-            this.dataGridViewTextBoxColumn16.FillWeight = 3.010882F;
-            this.dataGridViewTextBoxColumn16.HeaderText = "NoTypeEmploye";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 110;
+            this.type.DataPropertyName = "NoTypeEmploye";
+            this.type.FillWeight = 3.010882F;
+            this.type.HeaderText = "NoTypeEmploye";
+            this.type.MinimumWidth = 6;
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Width = 110;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -294,49 +337,6 @@
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Width = 101;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Gestion des employés";
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(40, 413);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(152, 32);
-            this.btnAjouter.TabIndex = 2;
-            this.btnAjouter.Text = "Ajout d’un employé";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(198, 413);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(187, 32);
-            this.btnModifier.TabIndex = 3;
-            this.btnModifier.Text = "Modification d’un employé";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(391, 413);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(192, 32);
-            this.btnSupprimer.TabIndex = 4;
-            this.btnSupprimer.Text = "Suppression d’un employé";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
             // GestionEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,12 +347,12 @@
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.employesDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionEmployes";
             this.Text = "Gestion des employés";
             this.Load += new System.EventHandler(this.GestionEmployes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,7 +361,11 @@
         #endregion
         private System.Windows.Forms.BindingSource employesBindingSource;
         private System.Windows.Forms.DataGridView employesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -376,13 +380,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.Button btnSupprimer;
     }
 }

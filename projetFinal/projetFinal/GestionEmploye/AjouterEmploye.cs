@@ -40,19 +40,19 @@ namespace projetFinal.GestionEmploye
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             bool error = false;
-
+            errMessage.Clear();
             if (CheckPassword(tbPassword.Text))
             {
                 error = true;
             }
 
-            if (prenomTextBox.Text.Trim() == "")
+            if (prenomTextBox.Text.Trim() == "" || prenomTextBox.Text.Trim() == null)
             {
                 errMessage.SetError(prenomTextBox, "Le prenom de l'employé ne peut pas être vide");
                 error = true;
             }
 
-            if (nomTextBox.Text.Trim() == "")
+            if (nomTextBox.Text.Trim() == "" || nomTextBox.Text.Trim() == null)
             {
                 errMessage.SetError(nomTextBox, "Le nom de l'employé ne peut pas être vide");
                 error = true;
@@ -64,19 +64,24 @@ namespace projetFinal.GestionEmploye
                 error = true;           
             } 
 
-            if (noCiviqueTextBox.Text.Trim() == "")
+            if (noCiviqueTextBox.Text.Trim() == "" || noCiviqueTextBox.Text.Trim() == null)
             {
                 errMessage.SetError(noCiviqueTextBox, "Le numero civique de l'employé ne peut pas être vide");
                 error = true;
             }
+            if (!int.TryParse(noCiviqueTextBox.Text, out _))
+            {
+                errMessage.SetError(noCiviqueTextBox, "Le numéro civique doit être un nombre entier.");
+                error = true;
+            }
 
-            if (rueTextBox.Text.Trim() == "")
+            if (rueTextBox.Text.Trim() == "" || rueTextBox.Text.Trim() == null)
             {
                 errMessage.SetError(rueTextBox, "Le rue de l'employé ne peut pas être vide");
                 error = true;
             }
 
-            if (villeTextBox.Text.Trim() == "")
+            if (villeTextBox.Text.Trim() == "" || villeTextBox.Text.Trim() == null)
             {
                 errMessage.SetError(villeTextBox, "La ville de l'employé ne peut pas être vide");
                 error = true;
@@ -140,8 +145,6 @@ namespace projetFinal.GestionEmploye
                         Remarque = remarqueTextBox.Text
 
                     };
-                    Console.WriteLine(newEmploye);
-
                     dataContext.Employes.InsertOnSubmit(newEmploye);
                     dataContext.SubmitChanges();
                     MessageBox.Show("Employee ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -240,7 +243,7 @@ namespace projetFinal.GestionEmploye
 
                     if (canadianPostalCodeRegex.IsMatch(CodePostal.Trim()))
                     {
-                        errMessage.Clear();
+                        
                         return false;
                     }
                     else
@@ -273,7 +276,6 @@ namespace projetFinal.GestionEmploye
 
                     if (phonenumber.IsMatch(NumberPhone.Trim()))
                     {
-                        errMessage.Clear();
                         return false;
                     }
                     else
@@ -305,7 +307,6 @@ namespace projetFinal.GestionEmploye
 
                     if (phonenumber.IsMatch(NumberPhone.Trim()))
                     {
-                        errMessage.Clear();
                         return false;
                     }
                     else
@@ -335,7 +336,6 @@ namespace projetFinal.GestionEmploye
 
                 if (courriel.IsMatch(Email.Trim()))
                 {
-                    errMessage.Clear();
                     return false;
                 }
                 else

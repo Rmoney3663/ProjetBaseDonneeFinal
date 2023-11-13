@@ -50,12 +50,59 @@ namespace projetFinal.Options
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
+            GestionEmploye.ModifierEmploye formulaire = new GestionEmploye.ModifierEmploye();
+            DataGridViewRow selectedRow = employesDataGridView.SelectedRows[0];
+            int No = (int)selectedRow.Cells["No"].Value;
+            
 
+            SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
+
+            splitContainer.Parent.Text = "Gestion des employés";
+
+            formulaire.TopLevel = false;
+            formulaire.FormBorderStyle = FormBorderStyle.None;
+            formulaire.Dock = DockStyle.Fill;
+            formulaire.ID = No;
+            splitContainer.Panel2.Controls.Clear();
+            splitContainer.Panel2.Controls.Add(formulaire);
+
+            formulaire.Show();
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = employesDataGridView.SelectedRows[0];
+            int No = (int)selectedRow.Cells["No"].Value;
+            int type = (int)selectedRow.Cells["type"].Value;
 
+            if (No != LoginUser && type !=1)
+            {
+                GestionEmploye.SupprimerEmploye formulaire = new GestionEmploye.SupprimerEmploye(); 
+                SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
+
+                splitContainer.Parent.Text = "Gestion des employés";
+
+                formulaire.TopLevel = false;
+                formulaire.FormBorderStyle = FormBorderStyle.None;
+                formulaire.Dock = DockStyle.Fill;
+                formulaire.ID = No;
+                splitContainer.Panel2.Controls.Clear();
+                splitContainer.Panel2.Controls.Add(formulaire);
+
+                formulaire.Show();
+            }
+            else
+            {
+                if (type == 1)
+                {
+                    MessageBox.Show("Ne peut pas supprimer l'admin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ne peut pas supprimer soi-même", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               
+            }
         }
     }
 }

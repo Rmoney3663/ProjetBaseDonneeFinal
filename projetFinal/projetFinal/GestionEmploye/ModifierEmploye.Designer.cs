@@ -230,6 +230,7 @@
             // noTypeEmployeComboBox
             // 
             this.noTypeEmployeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.noTypeEmployeComboBox.Enabled = false;
             this.noTypeEmployeComboBox.FormattingEnabled = true;
             this.noTypeEmployeComboBox.Location = new System.Drawing.Point(113, 286);
             this.noTypeEmployeComboBox.Name = "noTypeEmployeComboBox";

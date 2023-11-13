@@ -14,7 +14,7 @@ namespace projetFinal.GestionEmploye
     public partial class ModifierEmploye : Form
     {
         private DataClasses1DataContext dataContext = new DataClasses1DataContext();
-
+        public int ID { get; set; }
         public ModifierEmploye()
         {
             InitializeComponent();
@@ -39,7 +39,27 @@ namespace projetFinal.GestionEmploye
             noTypeEmployeComboBox.ValueMember = "No";
             noTypeEmployeComboBox.DataSource = typesEmploye.ToList();
 
-            // this how select in combo   cbTypeSoin.SelectedValue = unSoin.noTypeSoin;
+            var employeeToEdit = dataContext.Employes.SingleOrDefault(employ => employ.No == ID);
+
+            if (employeeToEdit != null)
+            {
+                tbPassword.Text = employeeToEdit.MotDePasse;
+                nomTextBox.Text = employeeToEdit.Nom;
+                prenomTextBox.Text = employeeToEdit.Prenom;
+                sexeComboBox.SelectedItem = employeeToEdit.Sexe;
+                numAge.Value = employeeToEdit.Age;
+                noCiviqueTextBox.Text = employeeToEdit.NoCivique.ToString();
+                rueTextBox.Text = employeeToEdit.Rue;
+                villeTextBox.Text = employeeToEdit.Ville;
+                idProvinceComboBox.SelectedValue = employeeToEdit.IdProvince;
+                codePostalTextBox.Text = employeeToEdit.CodePostal;
+                telephoneTextBox.Text = employeeToEdit.Telephone.ToString();
+                cellulaireTextBox.Text = employeeToEdit.Cellulaire.ToString();
+                courrielTextBox.Text = employeeToEdit.Courriel;
+                numSalaire.Value = employeeToEdit.SalaireHoraire;
+                remarqueTextBox.Text = employeeToEdit.Remarque;
+
+            };
         }
 
         private bool CheckPassword(string Password)
@@ -106,7 +126,6 @@ namespace projetFinal.GestionEmploye
 
                     if (canadianPostalCodeRegex.IsMatch(CodePostal.Trim()))
                     {
-                        errMessage.Clear();
                         return false;
                     }
                     else
@@ -139,7 +158,6 @@ namespace projetFinal.GestionEmploye
 
                     if (phonenumber.IsMatch(NumberPhone.Trim()))
                     {
-                        errMessage.Clear();
                         return false;
                     }
                     else
@@ -171,7 +189,6 @@ namespace projetFinal.GestionEmploye
 
                     if (phonenumber.IsMatch(NumberPhone.Trim()))
                     {
-                        errMessage.Clear();
                         return false;
                     }
                     else
@@ -201,7 +218,6 @@ namespace projetFinal.GestionEmploye
 
                 if (courriel.IsMatch(Email.Trim()))
                 {
-                    errMessage.Clear();
                     return false;
                 }
                 else
@@ -215,7 +231,7 @@ namespace projetFinal.GestionEmploye
         private void btnModifier_Click(object sender, EventArgs e)
         {
             bool error = false;
-
+            errMessage.Clear();
             if (CheckPassword(tbPassword.Text))
             {
                 error = true;
@@ -242,6 +258,11 @@ namespace projetFinal.GestionEmploye
             if (noCiviqueTextBox.Text.Trim() == "")
             {
                 errMessage.SetError(noCiviqueTextBox, "Le numero civique de l'employé ne peut pas être vide");
+                error = true;
+            }
+            if (!int.TryParse(noCiviqueTextBox.Text, out _))
+            {
+                errMessage.SetError(noCiviqueTextBox, "Le numéro civique doit être un nombre entier.");
                 error = true;
             }
 
@@ -292,38 +313,34 @@ namespace projetFinal.GestionEmploye
             {
                 try
                 {
-                    int largestNumber = dataContext.Employes.Max(employe => employe.No) + 1;
+                    var employeeToModify = dataContext.Employes.SingleOrDefault(employ => employ.No == ID);
 
-                    Employes newEmploye = new Employes
+                    if (employeeToModify != null)
                     {
-                        No = largestNumber,
-                        MotDePasse = tbPassword.Text,
-                        Nom = nomTextBox.Text,
-                        Prenom = prenomTextBox.Text,
-                        Sexe = (string)sexeComboBox.SelectedItem,
-                        Age = (int)numAge.Value,
-                        NoCivique = int.Parse(noCiviqueTextBox.Text),
-                        Rue = rueTextBox.Text,
-                        Ville = villeTextBox.Text,
-                        IdProvince = (string)idProvinceComboBox.SelectedValue,
-                        CodePostal = codePostalTextBox.Text,
-                        Telephone = decimal.Parse(telephoneTextBox.Text),
-                        Cellulaire = decimal.Parse(cellulaireTextBox.Text),
-                        Courriel = courrielTextBox.Text,
-                        SalaireHoraire = numSalaire.Value,
-                        NoTypeEmploye = (int)noTypeEmployeComboBox.SelectedValue,
-                        Remarque = remarqueTextBox.Text
+                        employeeToModify.MotDePasse = tbPassword.Text;
+                        employeeToModify.Nom = nomTextBox.Text;
+                        employeeToModify.Prenom = prenomTextBox.Text;
+                        employeeToModify.Sexe = (string)sexeComboBox.SelectedItem;
+                        employeeToModify.Age = (int)numAge.Value;
+                        employeeToModify.NoCivique = int.Parse(noCiviqueTextBox.Text);
+                        employeeToModify.Rue = rueTextBox.Text;
+                        employeeToModify.Ville = villeTextBox.Text;
+                        employeeToModify.IdProvince = (string)idProvinceComboBox.SelectedValue;
+                        employeeToModify.CodePostal = codePostalTextBox.Text;
+                        employeeToModify.Telephone = decimal.Parse(telephoneTextBox.Text);
+                        employeeToModify.Cellulaire = decimal.Parse(cellulaireTextBox.Text);
+                        employeeToModify.Courriel = courrielTextBox.Text;
+                        employeeToModify.SalaireHoraire = numSalaire.Value;
+                        employeeToModify.Remarque = remarqueTextBox.Text;
 
                     };
-                    Console.WriteLine(newEmploye);
 
-                    dataContext.Employes.InsertOnSubmit(newEmploye);
                     dataContext.SubmitChanges();
-                    MessageBox.Show("Employee ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Employee modifier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error pour ajouter employé: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error pour modifier employé: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
