@@ -77,19 +77,32 @@ namespace projetFinal.Options
 
             if (No != LoginUser && type !=1)
             {
-                GestionEmploye.SupprimerEmploye formulaire = new GestionEmploye.SupprimerEmploye(); 
-                SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
+                var servicesForEmployee = dataContext.Services
+                .Where(service => service.NoEmploye == No)
+                .ToList(); 
 
-                splitContainer.Parent.Text = "Gestion des employés";
+                if (servicesForEmployee.Count > 0)
+                {
+                    MessageBox.Show("Ne peut pas supprimer, puisqu'il a des services", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    GestionEmploye.SupprimerEmploye formulaire = new GestionEmploye.SupprimerEmploye();
+                    SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
 
-                formulaire.TopLevel = false;
-                formulaire.FormBorderStyle = FormBorderStyle.None;
-                formulaire.Dock = DockStyle.Fill;
-                formulaire.ID = No;
-                splitContainer.Panel2.Controls.Clear();
-                splitContainer.Panel2.Controls.Add(formulaire);
+                    splitContainer.Parent.Text = "Gestion des employés";
 
-                formulaire.Show();
+                    formulaire.TopLevel = false;
+                    formulaire.FormBorderStyle = FormBorderStyle.None;
+                    formulaire.Dock = DockStyle.Fill;
+                    formulaire.ID = No;
+                    splitContainer.Panel2.Controls.Clear();
+                    splitContainer.Panel2.Controls.Add(formulaire);
+
+                    formulaire.Show();
+                }
+
+                
             }
             else
             {
