@@ -13,6 +13,7 @@ namespace projetFinal
 {
     public partial class Choix : Form
     {
+        public int LoginUser { get; set; }
         public Choix()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace projetFinal
             formulaire.TopLevel = false;
             formulaire.FormBorderStyle = FormBorderStyle.None;
             formulaire.Dock = DockStyle.Fill;
-
+            formulaire.LoginUser = LoginUser;
             splitContainer.Panel2.Controls.Clear();
             splitContainer.Panel2.Controls.Add(formulaire);
 

@@ -64,6 +64,24 @@
     <Compile Include="Choix.Designer.cs">
       <DependentUpon>Choix.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionEmploye\AjouterEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmploye\AjouterEmploye.Designer.cs">
+      <DependentUpon>AjouterEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmploye\ModifierEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmploye\ModifierEmploye.Designer.cs">
+      <DependentUpon>ModifierEmploye.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionEmploye\SupprimerEmploye.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEmploye\SupprimerEmploye.Designer.cs">
+      <DependentUpon>SupprimerEmploye.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEmploye\AjouterEmploye.resx">
+      <DependentUpon>AjouterEmploye.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
