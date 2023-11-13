@@ -49,7 +49,7 @@
             this.prenomTextBox = new System.Windows.Forms.TextBox();
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomTextBox = new System.Windows.Forms.TextBox();
-            this.motDePasseTextBox = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.sexeComboBox = new System.Windows.Forms.ComboBox();
             this.numAge = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.telephoneTextBox = new System.Windows.Forms.TextBox();
             this.cellulaireTextBox = new System.Windows.Forms.TextBox();
             this.courrielTextBox = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numSalaire = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.noTypeEmployeComboBox = new System.Windows.Forms.ComboBox();
             this.remarqueTextBox = new System.Windows.Forms.TextBox();
@@ -82,9 +82,135 @@
             remarqueLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSalaire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).BeginInit();
             this.SuspendLayout();
+            // 
+            // prenomLabel
+            // 
+            prenomLabel.AutoSize = true;
+            prenomLabel.Location = new System.Drawing.Point(12, 63);
+            prenomLabel.Name = "prenomLabel";
+            prenomLabel.Size = new System.Drawing.Size(46, 13);
+            prenomLabel.TabIndex = 4;
+            prenomLabel.Text = "Prenom:";
+            // 
+            // nomLabel
+            // 
+            nomLabel.AutoSize = true;
+            nomLabel.Location = new System.Drawing.Point(239, 63);
+            nomLabel.Name = "nomLabel";
+            nomLabel.Size = new System.Drawing.Size(32, 13);
+            nomLabel.TabIndex = 5;
+            nomLabel.Text = "Nom:";
+            // 
+            // motDePasseLabel
+            // 
+            motDePasseLabel.AutoSize = true;
+            motDePasseLabel.Location = new System.Drawing.Point(12, 96);
+            motDePasseLabel.Name = "motDePasseLabel";
+            motDePasseLabel.Size = new System.Drawing.Size(77, 13);
+            motDePasseLabel.TabIndex = 7;
+            motDePasseLabel.Text = "Mot De Passe:";
+            // 
+            // sexeLabel
+            // 
+            sexeLabel.AutoSize = true;
+            sexeLabel.Location = new System.Drawing.Point(239, 96);
+            sexeLabel.Name = "sexeLabel";
+            sexeLabel.Size = new System.Drawing.Size(34, 13);
+            sexeLabel.TabIndex = 9;
+            sexeLabel.Text = "Sexe:";
+            // 
+            // noCiviqueLabel
+            // 
+            noCiviqueLabel.AutoSize = true;
+            noCiviqueLabel.Location = new System.Drawing.Point(239, 128);
+            noCiviqueLabel.Name = "noCiviqueLabel";
+            noCiviqueLabel.Size = new System.Drawing.Size(62, 13);
+            noCiviqueLabel.TabIndex = 13;
+            noCiviqueLabel.Text = "No Civique:";
+            // 
+            // rueLabel
+            // 
+            rueLabel.AutoSize = true;
+            rueLabel.Location = new System.Drawing.Point(12, 162);
+            rueLabel.Name = "rueLabel";
+            rueLabel.Size = new System.Drawing.Size(30, 13);
+            rueLabel.TabIndex = 15;
+            rueLabel.Text = "Rue:";
+            // 
+            // villeLabel
+            // 
+            villeLabel.AutoSize = true;
+            villeLabel.Location = new System.Drawing.Point(239, 162);
+            villeLabel.Name = "villeLabel";
+            villeLabel.Size = new System.Drawing.Size(29, 13);
+            villeLabel.TabIndex = 17;
+            villeLabel.Text = "Ville:";
+            // 
+            // idProvinceLabel
+            // 
+            idProvinceLabel.AutoSize = true;
+            idProvinceLabel.Location = new System.Drawing.Point(12, 196);
+            idProvinceLabel.Name = "idProvinceLabel";
+            idProvinceLabel.Size = new System.Drawing.Size(52, 13);
+            idProvinceLabel.TabIndex = 19;
+            idProvinceLabel.Text = "Province:";
+            // 
+            // codePostalLabel
+            // 
+            codePostalLabel.AutoSize = true;
+            codePostalLabel.Location = new System.Drawing.Point(239, 196);
+            codePostalLabel.Name = "codePostalLabel";
+            codePostalLabel.Size = new System.Drawing.Size(67, 13);
+            codePostalLabel.TabIndex = 21;
+            codePostalLabel.Text = "Code Postal:";
+            // 
+            // telephoneLabel
+            // 
+            telephoneLabel.AutoSize = true;
+            telephoneLabel.Location = new System.Drawing.Point(12, 232);
+            telephoneLabel.Name = "telephoneLabel";
+            telephoneLabel.Size = new System.Drawing.Size(61, 13);
+            telephoneLabel.TabIndex = 23;
+            telephoneLabel.Text = "Telephone:";
+            // 
+            // cellulaireLabel
+            // 
+            cellulaireLabel.AutoSize = true;
+            cellulaireLabel.Location = new System.Drawing.Point(239, 232);
+            cellulaireLabel.Name = "cellulaireLabel";
+            cellulaireLabel.Size = new System.Drawing.Size(52, 13);
+            cellulaireLabel.TabIndex = 25;
+            cellulaireLabel.Text = "Cellulaire:";
+            // 
+            // courrielLabel
+            // 
+            courrielLabel.AutoSize = true;
+            courrielLabel.Location = new System.Drawing.Point(12, 267);
+            courrielLabel.Name = "courrielLabel";
+            courrielLabel.Size = new System.Drawing.Size(45, 13);
+            courrielLabel.TabIndex = 27;
+            courrielLabel.Text = "Courriel:";
+            // 
+            // noTypeEmployeLabel
+            // 
+            noTypeEmployeLabel.AutoSize = true;
+            noTypeEmployeLabel.Location = new System.Drawing.Point(12, 301);
+            noTypeEmployeLabel.Name = "noTypeEmployeLabel";
+            noTypeEmployeLabel.Size = new System.Drawing.Size(94, 13);
+            noTypeEmployeLabel.TabIndex = 31;
+            noTypeEmployeLabel.Text = "No Type Employe:";
+            // 
+            // remarqueLabel
+            // 
+            remarqueLabel.AutoSize = true;
+            remarqueLabel.Location = new System.Drawing.Point(239, 301);
+            remarqueLabel.Name = "remarqueLabel";
+            remarqueLabel.Size = new System.Drawing.Size(59, 13);
+            remarqueLabel.TabIndex = 33;
+            remarqueLabel.Text = "Remarque:";
             // 
             // label1
             // 
@@ -118,15 +244,6 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
-            // prenomLabel
-            // 
-            prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(12, 63);
-            prenomLabel.Name = "prenomLabel";
-            prenomLabel.Size = new System.Drawing.Size(46, 13);
-            prenomLabel.TabIndex = 4;
-            prenomLabel.Text = "Prenom:";
-            // 
             // prenomTextBox
             // 
             this.prenomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Prenom", true));
@@ -139,15 +256,6 @@
             // 
             this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
             // 
-            // nomLabel
-            // 
-            nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(239, 63);
-            nomLabel.Name = "nomLabel";
-            nomLabel.Size = new System.Drawing.Size(32, 13);
-            nomLabel.TabIndex = 5;
-            nomLabel.Text = "Nom:";
-            // 
             // nomTextBox
             // 
             this.nomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Nom", true));
@@ -156,35 +264,18 @@
             this.nomTextBox.Size = new System.Drawing.Size(121, 20);
             this.nomTextBox.TabIndex = 6;
             // 
-            // motDePasseLabel
+            // tbPassword
             // 
-            motDePasseLabel.AutoSize = true;
-            motDePasseLabel.Location = new System.Drawing.Point(12, 96);
-            motDePasseLabel.Name = "motDePasseLabel";
-            motDePasseLabel.Size = new System.Drawing.Size(77, 13);
-            motDePasseLabel.TabIndex = 7;
-            motDePasseLabel.Text = "Mot De Passe:";
-            // 
-            // motDePasseTextBox
-            // 
-            this.motDePasseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "MotDePasse", true));
-            this.motDePasseTextBox.Location = new System.Drawing.Point(112, 93);
-            this.motDePasseTextBox.Name = "motDePasseTextBox";
-            this.motDePasseTextBox.Size = new System.Drawing.Size(121, 20);
-            this.motDePasseTextBox.TabIndex = 8;
-            // 
-            // sexeLabel
-            // 
-            sexeLabel.AutoSize = true;
-            sexeLabel.Location = new System.Drawing.Point(239, 96);
-            sexeLabel.Name = "sexeLabel";
-            sexeLabel.Size = new System.Drawing.Size(34, 13);
-            sexeLabel.TabIndex = 9;
-            sexeLabel.Text = "Sexe:";
+            this.tbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "MotDePasse", true));
+            this.tbPassword.Location = new System.Drawing.Point(112, 93);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(121, 20);
+            this.tbPassword.TabIndex = 8;
             // 
             // sexeComboBox
             // 
             this.sexeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Sexe", true));
+            this.sexeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sexeComboBox.FormattingEnabled = true;
             this.sexeComboBox.Location = new System.Drawing.Point(319, 93);
             this.sexeComboBox.Name = "sexeComboBox";
@@ -205,6 +296,7 @@
             0,
             0});
             this.numAge.Name = "numAge";
+            this.numAge.ReadOnly = true;
             this.numAge.Size = new System.Drawing.Size(121, 20);
             this.numAge.TabIndex = 11;
             this.numAge.Value = new decimal(new int[] {
@@ -222,15 +314,6 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Age:";
             // 
-            // noCiviqueLabel
-            // 
-            noCiviqueLabel.AutoSize = true;
-            noCiviqueLabel.Location = new System.Drawing.Point(239, 128);
-            noCiviqueLabel.Name = "noCiviqueLabel";
-            noCiviqueLabel.Size = new System.Drawing.Size(62, 13);
-            noCiviqueLabel.TabIndex = 13;
-            noCiviqueLabel.Text = "No Civique:";
-            // 
             // noCiviqueTextBox
             // 
             this.noCiviqueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "NoCivique", true));
@@ -238,15 +321,6 @@
             this.noCiviqueTextBox.Name = "noCiviqueTextBox";
             this.noCiviqueTextBox.Size = new System.Drawing.Size(121, 20);
             this.noCiviqueTextBox.TabIndex = 14;
-            // 
-            // rueLabel
-            // 
-            rueLabel.AutoSize = true;
-            rueLabel.Location = new System.Drawing.Point(12, 162);
-            rueLabel.Name = "rueLabel";
-            rueLabel.Size = new System.Drawing.Size(30, 13);
-            rueLabel.TabIndex = 15;
-            rueLabel.Text = "Rue:";
             // 
             // rueTextBox
             // 
@@ -256,15 +330,6 @@
             this.rueTextBox.Size = new System.Drawing.Size(121, 20);
             this.rueTextBox.TabIndex = 16;
             // 
-            // villeLabel
-            // 
-            villeLabel.AutoSize = true;
-            villeLabel.Location = new System.Drawing.Point(239, 162);
-            villeLabel.Name = "villeLabel";
-            villeLabel.Size = new System.Drawing.Size(29, 13);
-            villeLabel.TabIndex = 17;
-            villeLabel.Text = "Ville:";
-            // 
             // villeTextBox
             // 
             this.villeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Ville", true));
@@ -273,32 +338,15 @@
             this.villeTextBox.Size = new System.Drawing.Size(121, 20);
             this.villeTextBox.TabIndex = 18;
             // 
-            // idProvinceLabel
-            // 
-            idProvinceLabel.AutoSize = true;
-            idProvinceLabel.Location = new System.Drawing.Point(12, 196);
-            idProvinceLabel.Name = "idProvinceLabel";
-            idProvinceLabel.Size = new System.Drawing.Size(52, 13);
-            idProvinceLabel.TabIndex = 19;
-            idProvinceLabel.Text = "Province:";
-            // 
             // idProvinceComboBox
             // 
             this.idProvinceComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "IdProvince", true));
+            this.idProvinceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idProvinceComboBox.FormattingEnabled = true;
             this.idProvinceComboBox.Location = new System.Drawing.Point(112, 193);
             this.idProvinceComboBox.Name = "idProvinceComboBox";
             this.idProvinceComboBox.Size = new System.Drawing.Size(121, 21);
             this.idProvinceComboBox.TabIndex = 20;
-            // 
-            // codePostalLabel
-            // 
-            codePostalLabel.AutoSize = true;
-            codePostalLabel.Location = new System.Drawing.Point(239, 196);
-            codePostalLabel.Name = "codePostalLabel";
-            codePostalLabel.Size = new System.Drawing.Size(67, 13);
-            codePostalLabel.TabIndex = 21;
-            codePostalLabel.Text = "Code Postal:";
             // 
             // codePostalTextBox
             // 
@@ -308,15 +356,6 @@
             this.codePostalTextBox.Size = new System.Drawing.Size(121, 20);
             this.codePostalTextBox.TabIndex = 22;
             // 
-            // telephoneLabel
-            // 
-            telephoneLabel.AutoSize = true;
-            telephoneLabel.Location = new System.Drawing.Point(12, 232);
-            telephoneLabel.Name = "telephoneLabel";
-            telephoneLabel.Size = new System.Drawing.Size(61, 13);
-            telephoneLabel.TabIndex = 23;
-            telephoneLabel.Text = "Telephone:";
-            // 
             // telephoneTextBox
             // 
             this.telephoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Telephone", true));
@@ -324,15 +363,6 @@
             this.telephoneTextBox.Name = "telephoneTextBox";
             this.telephoneTextBox.Size = new System.Drawing.Size(121, 20);
             this.telephoneTextBox.TabIndex = 24;
-            // 
-            // cellulaireLabel
-            // 
-            cellulaireLabel.AutoSize = true;
-            cellulaireLabel.Location = new System.Drawing.Point(239, 232);
-            cellulaireLabel.Name = "cellulaireLabel";
-            cellulaireLabel.Size = new System.Drawing.Size(52, 13);
-            cellulaireLabel.TabIndex = 25;
-            cellulaireLabel.Text = "Cellulaire:";
             // 
             // cellulaireTextBox
             // 
@@ -342,15 +372,6 @@
             this.cellulaireTextBox.Size = new System.Drawing.Size(121, 20);
             this.cellulaireTextBox.TabIndex = 26;
             // 
-            // courrielLabel
-            // 
-            courrielLabel.AutoSize = true;
-            courrielLabel.Location = new System.Drawing.Point(12, 267);
-            courrielLabel.Name = "courrielLabel";
-            courrielLabel.Size = new System.Drawing.Size(45, 13);
-            courrielLabel.TabIndex = 27;
-            courrielLabel.Text = "Courriel:";
-            // 
             // courrielTextBox
             // 
             this.courrielTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Courriel", true));
@@ -359,24 +380,24 @@
             this.courrielTextBox.Size = new System.Drawing.Size(121, 20);
             this.courrielTextBox.TabIndex = 28;
             // 
-            // numericUpDown1
+            // numSalaire
             // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(319, 264);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numSalaire.DecimalPlaces = 2;
+            this.numSalaire.Location = new System.Drawing.Point(319, 264);
+            this.numSalaire.Maximum = new decimal(new int[] {
             50000,
             0,
             0,
             131072});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numSalaire.Minimum = new decimal(new int[] {
             1000,
             0,
             0,
             131072});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(121, 20);
-            this.numericUpDown1.TabIndex = 29;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numSalaire.Name = "numSalaire";
+            this.numSalaire.Size = new System.Drawing.Size(121, 20);
+            this.numSalaire.TabIndex = 29;
+            this.numSalaire.Value = new decimal(new int[] {
             1000,
             0,
             0,
@@ -391,32 +412,15 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Salaire Horaire:";
             // 
-            // noTypeEmployeLabel
-            // 
-            noTypeEmployeLabel.AutoSize = true;
-            noTypeEmployeLabel.Location = new System.Drawing.Point(12, 301);
-            noTypeEmployeLabel.Name = "noTypeEmployeLabel";
-            noTypeEmployeLabel.Size = new System.Drawing.Size(94, 13);
-            noTypeEmployeLabel.TabIndex = 31;
-            noTypeEmployeLabel.Text = "No Type Employe:";
-            // 
             // noTypeEmployeComboBox
             // 
             this.noTypeEmployeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "NoTypeEmploye", true));
+            this.noTypeEmployeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.noTypeEmployeComboBox.FormattingEnabled = true;
             this.noTypeEmployeComboBox.Location = new System.Drawing.Point(112, 298);
             this.noTypeEmployeComboBox.Name = "noTypeEmployeComboBox";
             this.noTypeEmployeComboBox.Size = new System.Drawing.Size(121, 21);
             this.noTypeEmployeComboBox.TabIndex = 32;
-            // 
-            // remarqueLabel
-            // 
-            remarqueLabel.AutoSize = true;
-            remarqueLabel.Location = new System.Drawing.Point(239, 301);
-            remarqueLabel.Name = "remarqueLabel";
-            remarqueLabel.Size = new System.Drawing.Size(59, 13);
-            remarqueLabel.TabIndex = 33;
-            remarqueLabel.Text = "Remarque:";
             // 
             // remarqueTextBox
             // 
@@ -440,7 +444,7 @@
             this.Controls.Add(noTypeEmployeLabel);
             this.Controls.Add(this.noTypeEmployeComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numSalaire);
             this.Controls.Add(courrielLabel);
             this.Controls.Add(this.courrielTextBox);
             this.Controls.Add(cellulaireLabel);
@@ -462,7 +466,7 @@
             this.Controls.Add(sexeLabel);
             this.Controls.Add(this.sexeComboBox);
             this.Controls.Add(motDePasseLabel);
-            this.Controls.Add(this.motDePasseTextBox);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(nomLabel);
             this.Controls.Add(this.nomTextBox);
             this.Controls.Add(prenomLabel);
@@ -475,7 +479,7 @@
             this.Load += new System.EventHandler(this.AjouterEmploye_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numSalaire)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -490,7 +494,7 @@
         private System.Windows.Forms.BindingSource employesBindingSource;
         private System.Windows.Forms.TextBox prenomTextBox;
         private System.Windows.Forms.TextBox nomTextBox;
-        private System.Windows.Forms.TextBox motDePasseTextBox;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.ComboBox sexeComboBox;
         private System.Windows.Forms.NumericUpDown numAge;
         private System.Windows.Forms.Label label2;
@@ -502,7 +506,7 @@
         private System.Windows.Forms.TextBox telephoneTextBox;
         private System.Windows.Forms.TextBox cellulaireTextBox;
         private System.Windows.Forms.TextBox courrielTextBox;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numSalaire;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox noTypeEmployeComboBox;
         private System.Windows.Forms.TextBox remarqueTextBox;
