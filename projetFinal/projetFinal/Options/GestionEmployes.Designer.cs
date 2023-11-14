@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.employesDataGridView = new System.Windows.Forms.DataGridView();
+            this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
-            this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +44,16 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,16 +78,16 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn19,
             this.type,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
+            this.dataGridViewTextBoxColumn17});
             this.employesDataGridView.DataSource = this.employesBindingSource;
             this.employesDataGridView.Location = new System.Drawing.Point(11, 51);
             this.employesDataGridView.Margin = new System.Windows.Forms.Padding(2);
@@ -99,6 +99,10 @@
             this.employesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employesDataGridView.Size = new System.Drawing.Size(606, 332);
             this.employesDataGridView.TabIndex = 0;
+            // 
+            // employesBindingSource
+            // 
+            this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
             // 
             // label1
             // 
@@ -142,10 +146,6 @@
             this.btnSupprimer.Text = "Suppression d’un employé";
             this.btnSupprimer.UseVisualStyleBackColor = true;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
-            // 
-            // employesBindingSource
-            // 
-            this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
             // 
             // No
             // 
@@ -237,6 +237,16 @@
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 51;
             // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "ProvinceName";
+            this.dataGridViewTextBoxColumn18.FillWeight = 1.564527F;
+            this.dataGridViewTextBoxColumn18.HeaderText = "Provinces";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 79;
+            // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "IdProvince";
@@ -245,6 +255,7 @@
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
             this.dataGridViewTextBoxColumn10.Width = 83;
             // 
             // dataGridViewTextBoxColumn11
@@ -297,6 +308,16 @@
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Width = 98;
             // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "TypeEmployeDescription";
+            this.dataGridViewTextBoxColumn19.FillWeight = 1.144713F;
+            this.dataGridViewTextBoxColumn19.HeaderText = "TypesEmploye";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 101;
+            // 
             // type
             // 
             this.type.DataPropertyName = "NoTypeEmploye";
@@ -305,6 +326,7 @@
             this.type.MinimumWidth = 6;
             this.type.Name = "type";
             this.type.ReadOnly = true;
+            this.type.Visible = false;
             this.type.Width = 110;
             // 
             // dataGridViewTextBoxColumn17
@@ -316,26 +338,6 @@
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Width = 81;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Provinces";
-            this.dataGridViewTextBoxColumn18.FillWeight = 1.564527F;
-            this.dataGridViewTextBoxColumn18.HeaderText = "Provinces";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 79;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "TypesEmploye";
-            this.dataGridViewTextBoxColumn19.FillWeight = 1.144713F;
-            this.dataGridViewTextBoxColumn19.HeaderText = "TypesEmploye";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 101;
             // 
             // GestionEmployes
             // 
@@ -374,15 +376,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

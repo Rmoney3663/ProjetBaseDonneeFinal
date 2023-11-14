@@ -23,10 +23,41 @@ namespace projetFinal.Options
 
         private void GestionEmployes_Load(object sender, EventArgs e)
         {
+            /*
             var employees = from employe in dataContext.Employes
                             select employe;
             employesBindingSource.DataSource = employees.ToList();
             employesDataGridView.DataSource = employesBindingSource;
+            */
+            var employees = from employe in dataContext.Employes
+                            join province in dataContext.Provinces on employe.IdProvince equals province.Id
+                            join typeEmploye in dataContext.TypesEmploye on employe.NoTypeEmploye equals typeEmploye.No
+                            select new
+                            {
+                                employe.No,
+                                employe.Nom,
+                                employe.MotDePasse,
+                                employe.Prenom,
+                                employe.Sexe,
+                                employe.Age,
+                                employe.NoCivique,
+                                employe.Rue,
+                                employe.Ville,
+                                employe.IdProvince,
+                                employe.NoTypeEmploye,
+                                ProvinceName = province.Nom, // Display the province name
+                                employe.CodePostal,
+                                employe.Telephone,
+                                employe.Cellulaire,
+                                employe.Courriel,
+                                employe.SalaireHoraire,
+                                TypeEmployeDescription = typeEmploye.Description, // Display the type employe description
+                                employe.Remarque
+                            };
+
+            employesBindingSource.DataSource = employees.ToList();
+            employesDataGridView.DataSource = employesBindingSource;
+
 
         }
 
@@ -117,5 +148,7 @@ namespace projetFinal.Options
                
             }
         }
+
+       
     }
 }
