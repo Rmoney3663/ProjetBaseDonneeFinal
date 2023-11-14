@@ -92,7 +92,7 @@
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(214, 26);
             this.tbPassword.TabIndex = 9;
-            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
+            //this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // label1
             // 
@@ -112,7 +112,7 @@
             // tbNoEmploye
             // 
             this.tbNoEmploye.Location = new System.Drawing.Point(79, 143);
-            this.tbNoEmploye.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNoEmploye.Margin = new System.Windows.Forms.Padding(2);
             this.tbNoEmploye.Minimum = new decimal(new int[] {
             1,
             0,
@@ -140,9 +140,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Connexion";
-            this.Text = "Connexion";
+            this.Text = "Connexion";           
             ((System.ComponentModel.ISupportInitialize)(this.errMessage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNoEmploye)).EndInit();
             this.ResumeLayout(false);

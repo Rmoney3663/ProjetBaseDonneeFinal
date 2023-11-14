@@ -23,12 +23,6 @@ namespace projetFinal.Options
 
         private void GestionEmployes_Load(object sender, EventArgs e)
         {
-            /*
-            var employees = from employe in dataContext.Employes
-                            select employe;
-            employesBindingSource.DataSource = employees.ToList();
-            employesDataGridView.DataSource = employesBindingSource;
-            */
             var employees = from employe in dataContext.Employes
                             join province in dataContext.Provinces on employe.IdProvince equals province.Id
                             join typeEmploye in dataContext.TypesEmploye on employe.NoTypeEmploye equals typeEmploye.No
@@ -45,13 +39,13 @@ namespace projetFinal.Options
                                 employe.Ville,
                                 employe.IdProvince,
                                 employe.NoTypeEmploye,
-                                ProvinceName = province.Nom, // Display the province name
+                                ProvinceName = province.Nom, 
                                 employe.CodePostal,
                                 employe.Telephone,
                                 employe.Cellulaire,
                                 employe.Courriel,
                                 employe.SalaireHoraire,
-                                TypeEmployeDescription = typeEmploye.Description, // Display the type employe description
+                                TypeEmployeDescription = typeEmploye.Description,
                                 employe.Remarque
                             };
 
