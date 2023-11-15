@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.typesAbonnementDataGridView = new System.Windows.Forms.DataGridView();
-            this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnConfirmer = new System.Windows.Forms.Button();
-            this.btnAnnuler = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepensesObligatoires = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Annee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnConfirmer = new System.Windows.Forms.Button();
+            this.btnAnnuler = new System.Windows.Forms.Button();
+            this.warn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typesAbonnementBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -81,42 +81,6 @@
             this.typesAbonnementDataGridView.TabIndex = 3;
             this.typesAbonnementDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.typesAbonnementDataGridView_CellFormatting);
             this.typesAbonnementDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.typesAbonnementDataGridView_DataError);
-            // 
-            // typesAbonnementBindingSource
-            // 
-            this.typesAbonnementBindingSource.DataSource = typeof(projetFinal.TypesAbonnement);
-            // 
-            // btnConfirmer
-            // 
-            this.btnConfirmer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmer.Location = new System.Drawing.Point(86, 230);
-            this.btnConfirmer.Name = "btnConfirmer";
-            this.btnConfirmer.Size = new System.Drawing.Size(189, 51);
-            this.btnConfirmer.TabIndex = 4;
-            this.btnConfirmer.Text = "Confirmer Modification";
-            this.btnConfirmer.UseVisualStyleBackColor = true;
-            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
-            // 
-            // btnAnnuler
-            // 
-            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnnuler.Location = new System.Drawing.Point(281, 230);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(189, 51);
-            this.btnAnnuler.TabIndex = 5;
-            this.btnAnnuler.Text = "Annuler Modification";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
-            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(513, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Impossible de modifier le prix ou la dépense obligatoire qui ont été modifiés pou" +
-    "r la dernière fois cette année.";
             // 
             // No
             // 
@@ -166,12 +130,48 @@
             this.dataGridViewTextBoxColumn3.Visible = false;
             this.dataGridViewTextBoxColumn3.Width = 81;
             // 
+            // typesAbonnementBindingSource
+            // 
+            this.typesAbonnementBindingSource.DataSource = typeof(projetFinal.TypesAbonnement);
+            // 
+            // btnConfirmer
+            // 
+            this.btnConfirmer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmer.Location = new System.Drawing.Point(86, 230);
+            this.btnConfirmer.Name = "btnConfirmer";
+            this.btnConfirmer.Size = new System.Drawing.Size(189, 51);
+            this.btnConfirmer.TabIndex = 4;
+            this.btnConfirmer.Text = "Confirmer Modification";
+            this.btnConfirmer.UseVisualStyleBackColor = true;
+            this.btnConfirmer.Click += new System.EventHandler(this.btnConfirmer_Click);
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.Location = new System.Drawing.Point(281, 230);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(189, 51);
+            this.btnAnnuler.TabIndex = 5;
+            this.btnAnnuler.Text = "Annuler Modification";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // warn
+            // 
+            this.warn.AutoSize = true;
+            this.warn.Location = new System.Drawing.Point(14, 44);
+            this.warn.Name = "warn";
+            this.warn.Size = new System.Drawing.Size(336, 13);
+            this.warn.TabIndex = 6;
+            this.warn.Text = "Vous ne pouvez rien modifier, vous devez attendre l\'année prochaine.";
+            this.warn.Visible = false;
+            // 
             // ModifPrixDepenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 650);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.warn);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(this.typesAbonnementDataGridView);
@@ -198,7 +198,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label warn;
         private System.Windows.Forms.DataGridViewTextBoxColumn No;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prix;

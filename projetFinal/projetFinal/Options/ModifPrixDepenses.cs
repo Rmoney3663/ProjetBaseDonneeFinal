@@ -86,6 +86,7 @@ namespace projetFinal.Options
 
         private void typesAbonnementDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            var check = 0;
             if (typesAbonnementDataGridView.Columns[e.ColumnIndex].Name == "Annee")
             {
                 if (Convert.ToInt32(e.Value) == DateTime.Now.Year)
@@ -95,9 +96,18 @@ namespace projetFinal.Options
                 }
                 else
                 {
+                    check = 1;
                     typesAbonnementDataGridView.Rows[e.RowIndex].Cells["Prix"].ReadOnly = false;
                     typesAbonnementDataGridView.Rows[e.RowIndex].Cells["DepensesObligatoires"].ReadOnly = false;
                 }
+            }
+            if (check == 1)
+            {
+                warn.Text = "";
+            }
+            else
+            {
+                warn.Text = "Vous ne pouvez rien modifier, vous devez attendre l'année prochaine.";
             }
         }
 
