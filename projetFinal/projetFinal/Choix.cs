@@ -14,6 +14,7 @@ namespace projetFinal
     public partial class Choix : Form
     {
         public int LoginUser { get; set; }
+        private DataClasses1DataContext dataContext = new DataClasses1DataContext();
         public Choix()
         {
             InitializeComponent();
@@ -191,6 +192,75 @@ namespace projetFinal
             splitContainer.Panel2.Controls.Add(formulaire);
 
             formulaire.Show();
+        }
+
+        private void Choix_Load(object sender, EventArgs e)
+        {
+            var employee = dataContext.Employes
+            .Where(employ => employ.No == LoginUser)
+            .FirstOrDefault();
+
+            btnGestionEmp.Enabled = false;
+            btnAbonnement.Enabled = false;
+            btnReabonnement.Enabled = false;
+            btnMiseAJourAbo.Enabled = false;
+            btnModifPrixEtDepenses.Enabled = false;
+            btnInscriptionPartie.Enabled = false;
+            btnInscriptionDepense.Enabled = false;
+            btnVisualisationRapports.Enabled = false;
+            btnVisualisationStats.Enabled = false;
+
+            if (employee != null)
+            {
+                int noTypeEmploye = employee.NoTypeEmploye;
+                MessageBox.Show("Bienvenue " + employee.Prenom + " " + employee.Nom, "Connexion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                switch (noTypeEmploye)
+                {                    
+                    case 1:
+                        btnGestionEmp.Enabled = true;
+                        btnAbonnement.Enabled = true;
+                        btnReabonnement.Enabled = true;
+                        btnMiseAJourAbo.Enabled = true;
+                        btnModifPrixEtDepenses.Enabled = true;
+                        btnInscriptionPartie.Enabled = true;
+                        btnVisualisationRapports.Enabled = true;
+                        btnVisualisationStats.Enabled = true;
+                        break;
+                    case 2:
+                        btnGestionEmp.Enabled = true;
+                        btnModifPrixEtDepenses.Enabled = true;
+                        btnVisualisationRapports.Enabled = true;
+                        btnVisualisationStats.Enabled = true;
+                        break;
+                    case 3:
+                        btnAbonnement.Enabled = true;
+                        btnReabonnement.Enabled = true;
+                        btnMiseAJourAbo.Enabled = true;
+                        btnModifPrixEtDepenses.Enabled = true;
+                        btnInscriptionPartie.Enabled = true;
+                        btnVisualisationRapports.Enabled = true;
+                        btnVisualisationStats.Enabled = true;
+                        break;
+                    case 4:                        
+                        btnAbonnement.Enabled = true;
+                        btnReabonnement.Enabled = true;
+                        btnMiseAJourAbo.Enabled = true;
+                        btnInscriptionPartie.Enabled = true;
+                        break;
+                    case 5:
+                        btnInscriptionDepense.Enabled = true;
+                        break;
+                    case 6:
+                        btnInscriptionDepense.Enabled = true;
+                        break;
+                    case 7:                       
+                        break;
+                    default:
+                        MessageBox.Show("Le type d'employe n'est pas existant", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                }
+
+            }
         }
     }
 }
