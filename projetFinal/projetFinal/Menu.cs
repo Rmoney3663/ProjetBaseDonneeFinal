@@ -12,6 +12,7 @@ namespace projetFinal
 {
     public partial class Menu : Form
     {
+        public int LoginUser { get; set; }
         public Menu()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace projetFinal
             options.TopLevel = false;
             options.FormBorderStyle = FormBorderStyle.None;
             options.Dock = DockStyle.Fill;
-
+            options.LoginUser = LoginUser;
             // Add the content form to the right panel
             splitContainer1.Panel1.Controls.Add(options);
 
