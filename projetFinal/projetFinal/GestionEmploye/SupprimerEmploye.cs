@@ -27,23 +27,29 @@ namespace projetFinal.GestionEmploye
 
                 if (employeeToDelete != null)
                 {
-                    dataContext.Employes.DeleteOnSubmit(employeeToDelete);
-                    dataContext.SubmitChanges();
-                };
-                MessageBox.Show("Employee supprimer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Options.GestionEmployes formulaire = new Options.GestionEmployes();
+                    var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet employé ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
+                    if (result == DialogResult.Yes)
+                    {
+                        dataContext.Employes.DeleteOnSubmit(employeeToDelete);
+                        dataContext.SubmitChanges();
+                        MessageBox.Show("Employee supprimer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                splitContainer.Parent.Text = "Gestion des employés";
-
-                formulaire.TopLevel = false;
-                formulaire.FormBorderStyle = FormBorderStyle.None;
-                formulaire.Dock = DockStyle.Fill;
-                splitContainer.Panel2.Controls.Clear();
-                splitContainer.Panel2.Controls.Add(formulaire);
-
-                formulaire.Show();
+                        Options.GestionEmployes formulaire = new Options.GestionEmployes();
+                        SplitContainer splitContainer = (SplitContainer)this.FindForm().Parent.Parent;
+                        splitContainer.Parent.Text = "Gestion des employés";
+                        formulaire.TopLevel = false;
+                        formulaire.FormBorderStyle = FormBorderStyle.None;
+                        formulaire.Dock = DockStyle.Fill;
+                        splitContainer.Panel2.Controls.Clear();
+                        splitContainer.Panel2.Controls.Add(formulaire);
+                        formulaire.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Suppression annulée.", "Annuler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }                   
+                }
             }
             catch (Exception ex)
             {
