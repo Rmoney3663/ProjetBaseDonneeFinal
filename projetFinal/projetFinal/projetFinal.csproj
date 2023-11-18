@@ -166,6 +166,9 @@
     <EmbeddedResource Include="Choix.resx">
       <DependentUpon>Choix.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\Abonnement.resx">
+      <DependentUpon>Abonnement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\GestionEmployes.resx">
       <DependentUpon>GestionEmployes.cs</DependentUpon>
     </EmbeddedResource>
