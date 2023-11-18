@@ -28,3 +28,4 @@ C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\proj
 C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.AjouterEmploye.resources
 C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.ModifierEmploye.resources
 C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.SupprimerEmploye.resources
+C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.ModifPrixDepenses.resources
