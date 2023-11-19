@@ -109,14 +109,25 @@ namespace projetFinal.Options
                 errMessage.SetError(tbCourriel, "");
             }
 
-            if (tbTelephone.Text == "")
+            if (new string(tbTelephone.Text.Where(char.IsDigit).ToArray()).Length != 10)
             {
-                errMessage.SetError(tbTelephone, "Tous les éléments en gras sont obligatoires");
+                errMessage.SetError(tbTelephone, "Veuillez remplir cette zone de texte correctement");
                 binValide = false;
             }
             else
             {
                 errMessage.SetError(tbTelephone, "");
+            }
+
+            string cellulaire = new string(tbCellulaire.Text.Where(char.IsDigit).ToArray());
+            if (cellulaire.Length != 10 && cellulaire.Length != 0)
+            {
+                errMessage.SetError(tbCellulaire, "Veuillez remplir cette zone de texte correctement ou la vider");
+                binValide = false;
+            }
+            else
+            {
+                errMessage.SetError(tbCellulaire, "");
             }
 
             if (tbRue.Text == "")
@@ -139,9 +150,9 @@ namespace projetFinal.Options
                 errMessage.SetError(tbVille, "");
             }
 
-            if (tbCodePostal.Text == "")
+            if (tbCodePostal.Text.Trim().Length != 7)
             {
-                errMessage.SetError(tbCodePostal, "Tous les éléments en gras sont obligatoires");
+                errMessage.SetError(tbCodePostal, "Veuillez remplir cette zone de texte correctement");
                 binValide = false;
             }
             else
@@ -152,7 +163,7 @@ namespace projetFinal.Options
             // Si toutes les valeurs sont acceptées
             if (binValide == true)
             {
-
+                
             }
         }
     }

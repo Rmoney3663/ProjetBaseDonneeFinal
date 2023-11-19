@@ -43,7 +43,6 @@
             System.Windows.Forms.Label sexeLabel;
             System.Windows.Forms.Label telephoneLabel;
             System.Windows.Forms.Label villeLabel;
-            this.tbCellulaire = new System.Windows.Forms.TextBox();
             this.tbCourriel = new System.Windows.Forms.TextBox();
             this.dpNaissance = new System.Windows.Forms.DateTimePicker();
             this.tbNom = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.numNoCivique = new System.Windows.Forms.NumericUpDown();
             this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
             this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
+            this.tbCellulaire = new System.Windows.Forms.MaskedTextBox();
             cellulaireLabel = new System.Windows.Forms.Label();
             codePostalLabel = new System.Windows.Forms.Label();
             courrielLabel = new System.Windows.Forms.Label();
@@ -95,13 +95,6 @@
             cellulaireLabel.Size = new System.Drawing.Size(66, 16);
             cellulaireLabel.TabIndex = 1;
             cellulaireLabel.Text = "Cellulaire:";
-            // 
-            // tbCellulaire
-            // 
-            this.tbCellulaire.Location = new System.Drawing.Point(247, 312);
-            this.tbCellulaire.Name = "tbCellulaire";
-            this.tbCellulaire.Size = new System.Drawing.Size(279, 22);
-            this.tbCellulaire.TabIndex = 2;
             // 
             // codePostalLabel
             // 
@@ -287,7 +280,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(119, 9);
+            this.label1.Location = new System.Drawing.Point(140, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 29);
@@ -402,7 +395,6 @@
             this.tbTelephone.Location = new System.Drawing.Point(247, 284);
             this.tbTelephone.Mask = "(000) 000-0000";
             this.tbTelephone.Name = "tbTelephone";
-            this.tbTelephone.PromptChar = '9';
             this.tbTelephone.Size = new System.Drawing.Size(279, 22);
             this.tbTelephone.TabIndex = 53;
             // 
@@ -414,11 +406,20 @@
             this.tbCodePostal.Size = new System.Drawing.Size(279, 22);
             this.tbCodePostal.TabIndex = 54;
             // 
+            // tbCellulaire
+            // 
+            this.tbCellulaire.Location = new System.Drawing.Point(247, 312);
+            this.tbCellulaire.Mask = "(000) 000-0000";
+            this.tbCellulaire.Name = "tbCellulaire";
+            this.tbCellulaire.Size = new System.Drawing.Size(279, 22);
+            this.tbCellulaire.TabIndex = 55;
+            // 
             // Abonnement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 646);
+            this.Controls.Add(this.tbCellulaire);
             this.Controls.Add(this.tbCodePostal);
             this.Controls.Add(this.tbTelephone);
             this.Controls.Add(this.numNoCivique);
@@ -430,7 +431,6 @@
             this.Controls.Add(this.cbTypesAbo);
             this.Controls.Add(this.label1);
             this.Controls.Add(cellulaireLabel);
-            this.Controls.Add(this.tbCellulaire);
             this.Controls.Add(codePostalLabel);
             this.Controls.Add(courrielLabel);
             this.Controls.Add(this.tbCourriel);
@@ -465,7 +465,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbCellulaire;
         private System.Windows.Forms.TextBox tbCourriel;
         private System.Windows.Forms.DateTimePicker dpNaissance;
         private System.Windows.Forms.TextBox tbNom;
@@ -487,5 +486,6 @@
         private System.Windows.Forms.NumericUpDown numNoCivique;
         private System.Windows.Forms.MaskedTextBox tbTelephone;
         private System.Windows.Forms.MaskedTextBox tbCodePostal;
+        private System.Windows.Forms.MaskedTextBox tbCellulaire;
     }
 }
