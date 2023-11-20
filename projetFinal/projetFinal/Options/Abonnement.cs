@@ -6,6 +6,7 @@ using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -61,6 +62,7 @@ namespace projetFinal.Options
                 errMessage.SetError(tbPrenom, "");
             }
 
+            char sexe = 'N';
             if (rbF.Checked == false && rbH.Checked == false)
             {
                 errMessage.SetError(rbH, "Veuillez sélectionner l'une des options");
@@ -71,6 +73,10 @@ namespace projetFinal.Options
             {
                 errMessage.SetError(rbH, "");
                 errMessage.SetError(rbF, "");
+                if (rbF.Checked)
+                    sexe = 'F';
+                if (rbH.Checked)
+                    sexe = 'H';
             }
 
             // Vérifier si l'âge minimum est atteint
@@ -109,7 +115,8 @@ namespace projetFinal.Options
                 errMessage.SetError(tbCourriel, "");
             }
 
-            if (new string(tbTelephone.Text.Where(char.IsDigit).ToArray()).Length != 10)
+            string telephone = new string(tbTelephone.Text.Where(char.IsDigit).ToArray());
+            if (telephone.Length != 10)
             {
                 errMessage.SetError(tbTelephone, "Veuillez remplir cette zone de texte correctement");
                 binValide = false;
@@ -150,6 +157,7 @@ namespace projetFinal.Options
                 errMessage.SetError(tbVille, "");
             }
 
+            string codePostal = "";
             if (tbCodePostal.Text.Trim().Length != 7)
             {
                 errMessage.SetError(tbCodePostal, "Veuillez remplir cette zone de texte correctement");
@@ -158,12 +166,54 @@ namespace projetFinal.Options
             else
             {
                 errMessage.SetError(tbCodePostal, "");
+                codePostal = tbCodePostal.Text.Remove(3,1);
             }
 
             // Si toutes les valeurs sont acceptées
             if (binValide == true)
             {
-                
+                // Créer l'identifiant
+                var tousLesIDs = from unAbonnement in dataContext.Abonnements
+                                 select unAbonnement.Id;
+
+                var plusGrandNo = 0;
+
+                foreach (var id in tousLesIDs)
+                {
+                    string justeNumeros = new string(id.Where(char.IsDigit).ToArray());
+                    int nombre = int.Parse(justeNumeros);
+                    if (nombre > plusGrandNo)
+                        plusGrandNo = nombre;
+                }
+
+                int numSequence = plusGrandNo + 1;
+
+                string idAbonnement = Regex.Replace(tbNom.Text.Trim(), @"\d", "") + numSequence + "P";
+
+                // Créer un abonnement avec infos
+                Abonnements abonnement = new Abonnements
+                {
+                    Id = idAbonnement,
+                    DateAbonnement = DateTime.Today,
+                    Nom = tbNom.Text,
+                    Prenom = tbPrenom.Text,
+                    Sexe = sexe.ToString(),
+                    DateNaissance = dpNaissance.Value,
+                    NoCivique = int.Parse(numNoCivique.Value.ToString()),
+                    Rue = tbRue.Text,
+                    Ville = tbVille.Text,
+                    IdProvince = cbProvince.SelectedValue.ToString(),
+                    CodePostal = codePostal,
+                    Telephone = decimal.Parse(telephone),
+                    Cellulaire = decimal.Parse(cellulaire),
+                    Courriel = tbCourriel.Text,
+                    NoTypeAbonnement = int.Parse((string)cbTypesAbo.SelectedValue),
+                    Remarque = tbRemarque.Text
+                };
+
+                dataContext.Abonnements.InsertOnSubmit(abonnement);
+                dataContext.SubmitChanges();
+                MessageBox.Show("Nouvel abonnement ajouté", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
