@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace projetFinal.Options
@@ -127,6 +128,7 @@ namespace projetFinal.Options
             }
 
             string cellulaire = new string(tbCellulaire.Text.Where(char.IsDigit).ToArray());
+            decimal noCellulaire = 0;
             if (cellulaire.Length != 10 && cellulaire.Length != 0)
             {
                 errMessage.SetError(tbCellulaire, "Veuillez remplir cette zone de texte correctement ou la vider");
@@ -135,6 +137,8 @@ namespace projetFinal.Options
             else
             {
                 errMessage.SetError(tbCellulaire, "");
+                if (cellulaire != "")
+                    noCellulaire = decimal.Parse(cellulaire);
             }
 
             if (tbRue.Text == "")
@@ -193,27 +197,80 @@ namespace projetFinal.Options
                 // Créer un abonnement avec infos
                 Abonnements abonnement = new Abonnements
                 {
-                    Id = idAbonnement,
-                    DateAbonnement = DateTime.Today,
-                    Nom = tbNom.Text,
-                    Prenom = tbPrenom.Text,
-                    Sexe = sexe.ToString(),
-                    DateNaissance = dpNaissance.Value,
-                    NoCivique = int.Parse(numNoCivique.Value.ToString()),
-                    Rue = tbRue.Text,
-                    Ville = tbVille.Text,
-                    IdProvince = cbProvince.SelectedValue.ToString(),
-                    CodePostal = codePostal,
-                    Telephone = decimal.Parse(telephone),
-                    Cellulaire = decimal.Parse(cellulaire),
-                    Courriel = tbCourriel.Text,
-                    NoTypeAbonnement = int.Parse((string)cbTypesAbo.SelectedValue),
-                    Remarque = tbRemarque.Text
-                };
+                     Id = idAbonnement,
+                     DateAbonnement = DateTime.Today,
+                     Nom = tbNom.Text,
+                     Prenom = tbPrenom.Text,
+                     Sexe = sexe.ToString(),
+                     DateNaissance = dpNaissance.Value,
+                     NoCivique = int.Parse(numNoCivique.Value.ToString()),
+                     Rue = tbRue.Text,
+                     Ville = tbVille.Text,
+                     IdProvince = cbProvince.SelectedValue.ToString(),
+                     CodePostal = codePostal,
+                     Telephone = decimal.Parse(telephone),
+                     Courriel = tbCourriel.Text,
+                     NoTypeAbonnement = int.Parse(cbTypesAbo.SelectedValue.ToString()),
+                     Remarque = tbRemarque.Text
+                 };
+
+                if (noCellulaire != 0)
+                    abonnement.Cellulaire = decimal.Parse(cellulaire);
 
                 dataContext.Abonnements.InsertOnSubmit(abonnement);
-                dataContext.SubmitChanges();
-                MessageBox.Show("Nouvel abonnement ajouté", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                using (var porteeTransaction = new TransactionScope())
+                {
+                    // enregistre le contrat dans la base de données
+                    try
+                    {
+                        dataContext.SubmitChanges();
+                        MessageBox.Show("L'abonnement " + idAbonnement + " a été enregistré.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Refresh();
+
+                        porteeTransaction.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Impossible de modifier la base de données");
+                    }
+                }
+            }
+        }
+
+        private void cbTypesAbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTypesAbo.SelectedIndex == 0 || cbTypesAbo.SelectedIndex == 1)
+            {
+                lblNbEnfants.Visible = false;
+                numNbEnfants.Visible = false;
+                gbConjoint.Visible = false;
+                gbEnfants.Visible = false;
+            }
+
+            else if (cbTypesAbo.SelectedIndex == 2)
+            {
+                lblNbEnfants.Visible = false;
+                numNbEnfants.Visible = false;
+                gbConjoint.Visible = true;
+                gbEnfants.Visible = false;
+            }
+
+            else if (cbTypesAbo.SelectedIndex == 5)
+            {
+                lblNbEnfants.Visible = true;
+                numNbEnfants.Visible = true;
+                gbConjoint.Visible = true;
+                gbEnfants.Visible = true;
+            }
+
+            else
+            {
+                lblNbEnfants.Visible = false;
+                numNbEnfants.Visible = false;
+                gbConjoint.Visible = true;
+                gbEnfants.Visible = true;
             }
         }
     }
