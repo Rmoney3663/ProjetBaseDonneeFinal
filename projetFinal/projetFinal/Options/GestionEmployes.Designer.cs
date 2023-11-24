@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.employesDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnModifier = new System.Windows.Forms.Button();
-            this.btnSupprimer = new System.Windows.Forms.Button();
             this.No = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
+            this.btnSupprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -96,49 +96,6 @@
             this.employesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employesDataGridView.Size = new System.Drawing.Size(599, 332);
             this.employesDataGridView.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Gestion des employés";
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(40, 413);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(152, 32);
-            this.btnAjouter.TabIndex = 2;
-            this.btnAjouter.Text = "Ajout d’un employé";
-            this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            // 
-            // btnModifier
-            // 
-            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(198, 413);
-            this.btnModifier.Name = "btnModifier";
-            this.btnModifier.Size = new System.Drawing.Size(187, 32);
-            this.btnModifier.TabIndex = 3;
-            this.btnModifier.Text = "Modification d’un employé";
-            this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            // 
-            // btnSupprimer
-            // 
-            this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(391, 413);
-            this.btnSupprimer.Name = "btnSupprimer";
-            this.btnSupprimer.Size = new System.Drawing.Size(192, 32);
-            this.btnSupprimer.TabIndex = 4;
-            this.btnSupprimer.Text = "Suppression d’un employé";
-            this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // No
             // 
@@ -316,11 +273,54 @@
             // 
             this.employesBindingSource.DataSource = typeof(projetFinal.Employes);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Gestion des employés";
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouter.Location = new System.Drawing.Point(40, 413);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(152, 32);
+            this.btnAjouter.TabIndex = 2;
+            this.btnAjouter.Text = "Ajout d’un employé";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifier.Location = new System.Drawing.Point(198, 413);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(187, 32);
+            this.btnModifier.TabIndex = 3;
+            this.btnModifier.Text = "Modification d’un employé";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupprimer.Location = new System.Drawing.Point(391, 413);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(192, 32);
+            this.btnSupprimer.TabIndex = 4;
+            this.btnSupprimer.Text = "Suppression d’un employé";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
             // GestionEmployes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 514);
+            this.ClientSize = new System.Drawing.Size(628, 522);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);

@@ -81,6 +81,132 @@
             ((System.ComponentModel.ISupportInitialize)(this.numAge)).BeginInit();
             this.SuspendLayout();
             // 
+            // remarqueLabel
+            // 
+            remarqueLabel.AutoSize = true;
+            remarqueLabel.Location = new System.Drawing.Point(240, 282);
+            remarqueLabel.Name = "remarqueLabel";
+            remarqueLabel.Size = new System.Drawing.Size(59, 13);
+            remarqueLabel.TabIndex = 101;
+            remarqueLabel.Text = "Remarque:";
+            // 
+            // noTypeEmployeLabel
+            // 
+            noTypeEmployeLabel.AutoSize = true;
+            noTypeEmployeLabel.Location = new System.Drawing.Point(13, 282);
+            noTypeEmployeLabel.Name = "noTypeEmployeLabel";
+            noTypeEmployeLabel.Size = new System.Drawing.Size(94, 13);
+            noTypeEmployeLabel.TabIndex = 99;
+            noTypeEmployeLabel.Text = "No Type Employe:";
+            // 
+            // courrielLabel
+            // 
+            courrielLabel.AutoSize = true;
+            courrielLabel.Location = new System.Drawing.Point(13, 248);
+            courrielLabel.Name = "courrielLabel";
+            courrielLabel.Size = new System.Drawing.Size(45, 13);
+            courrielLabel.TabIndex = 95;
+            courrielLabel.Text = "Courriel:";
+            // 
+            // cellulaireLabel
+            // 
+            cellulaireLabel.AutoSize = true;
+            cellulaireLabel.Location = new System.Drawing.Point(240, 213);
+            cellulaireLabel.Name = "cellulaireLabel";
+            cellulaireLabel.Size = new System.Drawing.Size(52, 13);
+            cellulaireLabel.TabIndex = 93;
+            cellulaireLabel.Text = "Cellulaire:";
+            // 
+            // telephoneLabel
+            // 
+            telephoneLabel.AutoSize = true;
+            telephoneLabel.Location = new System.Drawing.Point(13, 213);
+            telephoneLabel.Name = "telephoneLabel";
+            telephoneLabel.Size = new System.Drawing.Size(61, 13);
+            telephoneLabel.TabIndex = 91;
+            telephoneLabel.Text = "Telephone:";
+            // 
+            // codePostalLabel
+            // 
+            codePostalLabel.AutoSize = true;
+            codePostalLabel.Location = new System.Drawing.Point(240, 177);
+            codePostalLabel.Name = "codePostalLabel";
+            codePostalLabel.Size = new System.Drawing.Size(67, 13);
+            codePostalLabel.TabIndex = 89;
+            codePostalLabel.Text = "Code Postal:";
+            // 
+            // idProvinceLabel
+            // 
+            idProvinceLabel.AutoSize = true;
+            idProvinceLabel.Location = new System.Drawing.Point(13, 177);
+            idProvinceLabel.Name = "idProvinceLabel";
+            idProvinceLabel.Size = new System.Drawing.Size(52, 13);
+            idProvinceLabel.TabIndex = 87;
+            idProvinceLabel.Text = "Province:";
+            // 
+            // villeLabel
+            // 
+            villeLabel.AutoSize = true;
+            villeLabel.Location = new System.Drawing.Point(240, 143);
+            villeLabel.Name = "villeLabel";
+            villeLabel.Size = new System.Drawing.Size(29, 13);
+            villeLabel.TabIndex = 85;
+            villeLabel.Text = "Ville:";
+            // 
+            // rueLabel
+            // 
+            rueLabel.AutoSize = true;
+            rueLabel.Location = new System.Drawing.Point(13, 143);
+            rueLabel.Name = "rueLabel";
+            rueLabel.Size = new System.Drawing.Size(30, 13);
+            rueLabel.TabIndex = 83;
+            rueLabel.Text = "Rue:";
+            // 
+            // noCiviqueLabel
+            // 
+            noCiviqueLabel.AutoSize = true;
+            noCiviqueLabel.Location = new System.Drawing.Point(240, 109);
+            noCiviqueLabel.Name = "noCiviqueLabel";
+            noCiviqueLabel.Size = new System.Drawing.Size(62, 13);
+            noCiviqueLabel.TabIndex = 81;
+            noCiviqueLabel.Text = "No Civique:";
+            // 
+            // sexeLabel
+            // 
+            sexeLabel.AutoSize = true;
+            sexeLabel.Location = new System.Drawing.Point(240, 77);
+            sexeLabel.Name = "sexeLabel";
+            sexeLabel.Size = new System.Drawing.Size(34, 13);
+            sexeLabel.TabIndex = 77;
+            sexeLabel.Text = "Sexe:";
+            // 
+            // motDePasseLabel
+            // 
+            motDePasseLabel.AutoSize = true;
+            motDePasseLabel.Location = new System.Drawing.Point(13, 77);
+            motDePasseLabel.Name = "motDePasseLabel";
+            motDePasseLabel.Size = new System.Drawing.Size(77, 13);
+            motDePasseLabel.TabIndex = 75;
+            motDePasseLabel.Text = "Mot De Passe:";
+            // 
+            // nomLabel
+            // 
+            nomLabel.AutoSize = true;
+            nomLabel.Location = new System.Drawing.Point(240, 44);
+            nomLabel.Name = "nomLabel";
+            nomLabel.Size = new System.Drawing.Size(32, 13);
+            nomLabel.TabIndex = 73;
+            nomLabel.Text = "Nom:";
+            // 
+            // prenomLabel
+            // 
+            prenomLabel.AutoSize = true;
+            prenomLabel.Location = new System.Drawing.Point(13, 44);
+            prenomLabel.Name = "prenomLabel";
+            prenomLabel.Size = new System.Drawing.Size(46, 13);
+            prenomLabel.TabIndex = 71;
+            prenomLabel.Text = "Prenom:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -91,15 +217,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Supprimer un employé";
             // 
-            // remarqueLabel
-            // 
-            remarqueLabel.AutoSize = true;
-            remarqueLabel.Location = new System.Drawing.Point(240, 282);
-            remarqueLabel.Name = "remarqueLabel";
-            remarqueLabel.Size = new System.Drawing.Size(59, 13);
-            remarqueLabel.TabIndex = 101;
-            remarqueLabel.Text = "Remarque:";
-            // 
             // remarqueTextBox
             // 
             this.remarqueTextBox.Enabled = false;
@@ -108,15 +225,6 @@
             this.remarqueTextBox.ReadOnly = true;
             this.remarqueTextBox.Size = new System.Drawing.Size(121, 20);
             this.remarqueTextBox.TabIndex = 102;
-            // 
-            // noTypeEmployeLabel
-            // 
-            noTypeEmployeLabel.AutoSize = true;
-            noTypeEmployeLabel.Location = new System.Drawing.Point(13, 282);
-            noTypeEmployeLabel.Name = "noTypeEmployeLabel";
-            noTypeEmployeLabel.Size = new System.Drawing.Size(94, 13);
-            noTypeEmployeLabel.TabIndex = 99;
-            noTypeEmployeLabel.Text = "No Type Employe:";
             // 
             // noTypeEmployeComboBox
             // 
@@ -162,15 +270,6 @@
             0,
             131072});
             // 
-            // courrielLabel
-            // 
-            courrielLabel.AutoSize = true;
-            courrielLabel.Location = new System.Drawing.Point(13, 248);
-            courrielLabel.Name = "courrielLabel";
-            courrielLabel.Size = new System.Drawing.Size(45, 13);
-            courrielLabel.TabIndex = 95;
-            courrielLabel.Text = "Courriel:";
-            // 
             // courrielTextBox
             // 
             this.courrielTextBox.Enabled = false;
@@ -179,15 +278,6 @@
             this.courrielTextBox.ReadOnly = true;
             this.courrielTextBox.Size = new System.Drawing.Size(121, 20);
             this.courrielTextBox.TabIndex = 96;
-            // 
-            // cellulaireLabel
-            // 
-            cellulaireLabel.AutoSize = true;
-            cellulaireLabel.Location = new System.Drawing.Point(240, 213);
-            cellulaireLabel.Name = "cellulaireLabel";
-            cellulaireLabel.Size = new System.Drawing.Size(52, 13);
-            cellulaireLabel.TabIndex = 93;
-            cellulaireLabel.Text = "Cellulaire:";
             // 
             // cellulaireTextBox
             // 
@@ -198,15 +288,6 @@
             this.cellulaireTextBox.Size = new System.Drawing.Size(121, 20);
             this.cellulaireTextBox.TabIndex = 94;
             // 
-            // telephoneLabel
-            // 
-            telephoneLabel.AutoSize = true;
-            telephoneLabel.Location = new System.Drawing.Point(13, 213);
-            telephoneLabel.Name = "telephoneLabel";
-            telephoneLabel.Size = new System.Drawing.Size(61, 13);
-            telephoneLabel.TabIndex = 91;
-            telephoneLabel.Text = "Telephone:";
-            // 
             // telephoneTextBox
             // 
             this.telephoneTextBox.Enabled = false;
@@ -216,15 +297,6 @@
             this.telephoneTextBox.Size = new System.Drawing.Size(121, 20);
             this.telephoneTextBox.TabIndex = 92;
             // 
-            // codePostalLabel
-            // 
-            codePostalLabel.AutoSize = true;
-            codePostalLabel.Location = new System.Drawing.Point(240, 177);
-            codePostalLabel.Name = "codePostalLabel";
-            codePostalLabel.Size = new System.Drawing.Size(67, 13);
-            codePostalLabel.TabIndex = 89;
-            codePostalLabel.Text = "Code Postal:";
-            // 
             // codePostalTextBox
             // 
             this.codePostalTextBox.Enabled = false;
@@ -233,15 +305,6 @@
             this.codePostalTextBox.ReadOnly = true;
             this.codePostalTextBox.Size = new System.Drawing.Size(121, 20);
             this.codePostalTextBox.TabIndex = 90;
-            // 
-            // idProvinceLabel
-            // 
-            idProvinceLabel.AutoSize = true;
-            idProvinceLabel.Location = new System.Drawing.Point(13, 177);
-            idProvinceLabel.Name = "idProvinceLabel";
-            idProvinceLabel.Size = new System.Drawing.Size(52, 13);
-            idProvinceLabel.TabIndex = 87;
-            idProvinceLabel.Text = "Province:";
             // 
             // idProvinceComboBox
             // 
@@ -253,15 +316,6 @@
             this.idProvinceComboBox.Size = new System.Drawing.Size(121, 21);
             this.idProvinceComboBox.TabIndex = 88;
             // 
-            // villeLabel
-            // 
-            villeLabel.AutoSize = true;
-            villeLabel.Location = new System.Drawing.Point(240, 143);
-            villeLabel.Name = "villeLabel";
-            villeLabel.Size = new System.Drawing.Size(29, 13);
-            villeLabel.TabIndex = 85;
-            villeLabel.Text = "Ville:";
-            // 
             // villeTextBox
             // 
             this.villeTextBox.Enabled = false;
@@ -271,15 +325,6 @@
             this.villeTextBox.Size = new System.Drawing.Size(121, 20);
             this.villeTextBox.TabIndex = 86;
             // 
-            // rueLabel
-            // 
-            rueLabel.AutoSize = true;
-            rueLabel.Location = new System.Drawing.Point(13, 143);
-            rueLabel.Name = "rueLabel";
-            rueLabel.Size = new System.Drawing.Size(30, 13);
-            rueLabel.TabIndex = 83;
-            rueLabel.Text = "Rue:";
-            // 
             // rueTextBox
             // 
             this.rueTextBox.Enabled = false;
@@ -288,15 +333,6 @@
             this.rueTextBox.ReadOnly = true;
             this.rueTextBox.Size = new System.Drawing.Size(121, 20);
             this.rueTextBox.TabIndex = 84;
-            // 
-            // noCiviqueLabel
-            // 
-            noCiviqueLabel.AutoSize = true;
-            noCiviqueLabel.Location = new System.Drawing.Point(240, 109);
-            noCiviqueLabel.Name = "noCiviqueLabel";
-            noCiviqueLabel.Size = new System.Drawing.Size(62, 13);
-            noCiviqueLabel.TabIndex = 81;
-            noCiviqueLabel.Text = "No Civique:";
             // 
             // noCiviqueTextBox
             // 
@@ -340,15 +376,6 @@
             0,
             0});
             // 
-            // sexeLabel
-            // 
-            sexeLabel.AutoSize = true;
-            sexeLabel.Location = new System.Drawing.Point(240, 77);
-            sexeLabel.Name = "sexeLabel";
-            sexeLabel.Size = new System.Drawing.Size(34, 13);
-            sexeLabel.TabIndex = 77;
-            sexeLabel.Text = "Sexe:";
-            // 
             // sexeComboBox
             // 
             this.sexeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -359,15 +386,6 @@
             this.sexeComboBox.Size = new System.Drawing.Size(121, 21);
             this.sexeComboBox.TabIndex = 78;
             // 
-            // motDePasseLabel
-            // 
-            motDePasseLabel.AutoSize = true;
-            motDePasseLabel.Location = new System.Drawing.Point(13, 77);
-            motDePasseLabel.Name = "motDePasseLabel";
-            motDePasseLabel.Size = new System.Drawing.Size(77, 13);
-            motDePasseLabel.TabIndex = 75;
-            motDePasseLabel.Text = "Mot De Passe:";
-            // 
             // tbPassword
             // 
             this.tbPassword.Enabled = false;
@@ -377,15 +395,6 @@
             this.tbPassword.Size = new System.Drawing.Size(121, 20);
             this.tbPassword.TabIndex = 76;
             // 
-            // nomLabel
-            // 
-            nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(240, 44);
-            nomLabel.Name = "nomLabel";
-            nomLabel.Size = new System.Drawing.Size(32, 13);
-            nomLabel.TabIndex = 73;
-            nomLabel.Text = "Nom:";
-            // 
             // nomTextBox
             // 
             this.nomTextBox.Enabled = false;
@@ -394,15 +403,6 @@
             this.nomTextBox.ReadOnly = true;
             this.nomTextBox.Size = new System.Drawing.Size(121, 20);
             this.nomTextBox.TabIndex = 74;
-            // 
-            // prenomLabel
-            // 
-            prenomLabel.AutoSize = true;
-            prenomLabel.Location = new System.Drawing.Point(13, 44);
-            prenomLabel.Name = "prenomLabel";
-            prenomLabel.Size = new System.Drawing.Size(46, 13);
-            prenomLabel.TabIndex = 71;
-            prenomLabel.Text = "Prenom:";
             // 
             // prenomTextBox
             // 
@@ -439,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 522);
+            this.ClientSize = new System.Drawing.Size(628, 522);
             this.Controls.Add(remarqueLabel);
             this.Controls.Add(this.remarqueTextBox);
             this.Controls.Add(noTypeEmployeLabel);
