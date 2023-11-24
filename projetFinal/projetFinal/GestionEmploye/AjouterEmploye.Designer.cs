@@ -438,7 +438,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 522);
+            this.ClientSize = new System.Drawing.Size(628, 522);
             this.Controls.Add(remarqueLabel);
             this.Controls.Add(this.remarqueTextBox);
             this.Controls.Add(noTypeEmployeLabel);
