@@ -209,9 +209,9 @@ namespace projetFinal.Options
                     errMessage.SetError(rbHConjoint, "");
                     errMessage.SetError(rbFConjoint, "");
                     if (rbFConjoint.Checked)
-                        sexe = 'F';
+                        sexeConjoint = 'F';
                     if (rbHConjoint.Checked)
-                        sexe = 'H';
+                        sexeConjoint = 'H';
                 }
 
                 if (dpDateNaissanceConjoint.Value.Date.AddYears(18) > DateTime.Today)
@@ -279,12 +279,12 @@ namespace projetFinal.Options
                     Dependants conjoint = new Dependants
                     {
                         Id = idConjoint,
-                        Nom = tbNom.Text.Trim(),
-                        Prenom = tbPrenom.Text.Trim(),
+                        Nom = tbNomConjoint.Text.Trim(),
+                        Prenom = tbPrenomConjoint.Text.Trim(),
                         Sexe = sexeConjoint.ToString(),
                         DateNaissance = dpDateNaissanceConjoint.Value,
                         IdAbonnement = idAbonnement,
-                        Remarque = tbRemarque.Text.Trim()
+                        Remarque = tbRemarqueConjoint.Text.Trim()
                     };
                     dataContext.Dependants.InsertOnSubmit(conjoint);
                 }
@@ -343,6 +343,12 @@ namespace projetFinal.Options
                 gbConjoint.Visible = true;
                 gbEnfants.Visible = true;
             }
+        }
+
+        private void btnVoirAbonnements_Click(object sender, EventArgs e)
+        {
+            GestionAbonnements.frmListeAbonnements form = new GestionAbonnements.frmListeAbonnements();
+            form.ShowDialog();
         }
     }
 }

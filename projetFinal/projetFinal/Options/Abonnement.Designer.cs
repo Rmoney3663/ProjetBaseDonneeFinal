@@ -513,6 +513,7 @@
             this.btnVoirAbonnements.TabIndex = 51;
             this.btnVoirAbonnements.Text = "Voir la liste des abonnements";
             this.btnVoirAbonnements.UseVisualStyleBackColor = false;
+            this.btnVoirAbonnements.Click += new System.EventHandler(this.btnVoirAbonnements_Click);
             // 
             // errMessage
             // 
