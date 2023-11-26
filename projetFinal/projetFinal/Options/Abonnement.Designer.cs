@@ -77,24 +77,24 @@
             this.tbCellulaire = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbConjoint = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbRemarqueConjoint = new System.Windows.Forms.TextBox();
+            this.rbHConjoint = new System.Windows.Forms.RadioButton();
+            this.tbPrenomConjoint = new System.Windows.Forms.TextBox();
+            this.rbFConjoint = new System.Windows.Forms.RadioButton();
+            this.dpDateNaissanceConjoint = new System.Windows.Forms.DateTimePicker();
+            this.tbNomConjoint = new System.Windows.Forms.TextBox();
             this.gbEnfants = new System.Windows.Forms.GroupBox();
+            this.listeEnfants = new System.Windows.Forms.CheckedListBox();
+            this.btnEnfant = new System.Windows.Forms.Button();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.numNbEnfants = new System.Windows.Forms.NumericUpDown();
-            this.btnEnfant = new System.Windows.Forms.Button();
-            this.listeEnfants = new System.Windows.Forms.CheckedListBox();
             this.lblNbEnfants = new System.Windows.Forms.Label();
             cellulaireLabel = new System.Windows.Forms.Label();
             codePostalLabel = new System.Windows.Forms.Label();
@@ -269,6 +269,106 @@
             villeLabel.Size = new System.Drawing.Size(42, 16);
             villeLabel.TabIndex = 31;
             villeLabel.Text = "Ville:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(17, 161);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(122, 16);
+            label3.TabIndex = 58;
+            label3.Text = "Date Naissance:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(17, 77);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(43, 16);
+            label4.TabIndex = 60;
+            label4.Text = "Nom:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(17, 105);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(64, 16);
+            label5.TabIndex = 62;
+            label5.Text = "Prenom:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(17, 132);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(46, 16);
+            label6.TabIndex = 64;
+            label6.Text = "Sexe:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(17, 187);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(74, 16);
+            label8.TabIndex = 58;
+            label8.Text = "Remarque:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(14, 176);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(74, 16);
+            label10.TabIndex = 67;
+            label10.Text = "Remarque:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Location = new System.Drawing.Point(14, 122);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(46, 16);
+            label11.TabIndex = 75;
+            label11.Text = "Sexe:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.Location = new System.Drawing.Point(14, 150);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(122, 16);
+            label12.TabIndex = 68;
+            label12.Text = "Date Naissance:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label13.Location = new System.Drawing.Point(14, 94);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(64, 16);
+            label13.TabIndex = 73;
+            label13.Text = "Prenom:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label14.Location = new System.Drawing.Point(14, 66);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(43, 16);
+            label14.TabIndex = 71;
+            label14.Text = "Nom:";
             // 
             // tbCourriel
             // 
@@ -480,15 +580,15 @@
             // 
             this.gbConjoint.Controls.Add(label8);
             this.gbConjoint.Controls.Add(this.label7);
-            this.gbConjoint.Controls.Add(this.textBox3);
-            this.gbConjoint.Controls.Add(this.radioButton1);
-            this.gbConjoint.Controls.Add(this.textBox2);
-            this.gbConjoint.Controls.Add(this.radioButton2);
+            this.gbConjoint.Controls.Add(this.tbRemarqueConjoint);
+            this.gbConjoint.Controls.Add(this.rbHConjoint);
+            this.gbConjoint.Controls.Add(this.tbPrenomConjoint);
+            this.gbConjoint.Controls.Add(this.rbFConjoint);
             this.gbConjoint.Controls.Add(label6);
             this.gbConjoint.Controls.Add(label3);
             this.gbConjoint.Controls.Add(label5);
-            this.gbConjoint.Controls.Add(this.dateTimePicker1);
-            this.gbConjoint.Controls.Add(this.textBox1);
+            this.gbConjoint.Controls.Add(this.dpDateNaissanceConjoint);
+            this.gbConjoint.Controls.Add(this.tbNomConjoint);
             this.gbConjoint.Controls.Add(label4);
             this.gbConjoint.Location = new System.Drawing.Point(539, 12);
             this.gbConjoint.Name = "gbConjoint";
@@ -497,90 +597,6 @@
             this.gbConjoint.TabStop = false;
             this.gbConjoint.Text = "Conjoint(e)";
             this.gbConjoint.Visible = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(248, 130);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(76, 20);
-            this.radioButton1.TabIndex = 66;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Homme";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(158, 130);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 20);
-            this.radioButton2.TabIndex = 65;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Femme";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(17, 161);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(122, 16);
-            label3.TabIndex = 58;
-            label3.Text = "Date Naissance:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(158, 156);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
-            this.dateTimePicker1.TabIndex = 59;
-            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(17, 77);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(43, 16);
-            label4.TabIndex = 60;
-            label4.Text = "Nom:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(158, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 22);
-            this.textBox1.TabIndex = 61;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(17, 105);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 16);
-            label5.TabIndex = 62;
-            label5.Text = "Prenom:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(158, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 22);
-            this.textBox2.TabIndex = 63;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(17, 132);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(46, 16);
-            label6.TabIndex = 64;
-            label6.Text = "Sexe:";
             // 
             // label7
             // 
@@ -594,22 +610,56 @@
             this.label7.TabIndex = 58;
             this.label7.Text = "Conjoint(e):";
             // 
-            // label8
+            // tbRemarqueConjoint
             // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(17, 187);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(74, 16);
-            label8.TabIndex = 58;
-            label8.Text = "Remarque:";
+            this.tbRemarqueConjoint.Location = new System.Drawing.Point(158, 184);
+            this.tbRemarqueConjoint.Name = "tbRemarqueConjoint";
+            this.tbRemarqueConjoint.Size = new System.Drawing.Size(166, 22);
+            this.tbRemarqueConjoint.TabIndex = 59;
             // 
-            // textBox3
+            // rbHConjoint
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 22);
-            this.textBox3.TabIndex = 59;
+            this.rbHConjoint.AutoSize = true;
+            this.rbHConjoint.Location = new System.Drawing.Point(248, 130);
+            this.rbHConjoint.Name = "rbHConjoint";
+            this.rbHConjoint.Size = new System.Drawing.Size(76, 20);
+            this.rbHConjoint.TabIndex = 66;
+            this.rbHConjoint.TabStop = true;
+            this.rbHConjoint.Text = "Homme";
+            this.rbHConjoint.UseVisualStyleBackColor = true;
+            // 
+            // tbPrenomConjoint
+            // 
+            this.tbPrenomConjoint.Location = new System.Drawing.Point(158, 102);
+            this.tbPrenomConjoint.Name = "tbPrenomConjoint";
+            this.tbPrenomConjoint.Size = new System.Drawing.Size(166, 22);
+            this.tbPrenomConjoint.TabIndex = 63;
+            // 
+            // rbFConjoint
+            // 
+            this.rbFConjoint.AutoSize = true;
+            this.rbFConjoint.Location = new System.Drawing.Point(158, 130);
+            this.rbFConjoint.Name = "rbFConjoint";
+            this.rbFConjoint.Size = new System.Drawing.Size(74, 20);
+            this.rbFConjoint.TabIndex = 65;
+            this.rbFConjoint.TabStop = true;
+            this.rbFConjoint.Text = "Femme";
+            this.rbFConjoint.UseVisualStyleBackColor = true;
+            // 
+            // dpDateNaissanceConjoint
+            // 
+            this.dpDateNaissanceConjoint.Location = new System.Drawing.Point(158, 156);
+            this.dpDateNaissanceConjoint.Name = "dpDateNaissanceConjoint";
+            this.dpDateNaissanceConjoint.Size = new System.Drawing.Size(166, 22);
+            this.dpDateNaissanceConjoint.TabIndex = 59;
+            this.dpDateNaissanceConjoint.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // tbNomConjoint
+            // 
+            this.tbNomConjoint.Location = new System.Drawing.Point(158, 74);
+            this.tbNomConjoint.Name = "tbNomConjoint";
+            this.tbNomConjoint.Size = new System.Drawing.Size(166, 22);
+            this.tbNomConjoint.TabIndex = 61;
             // 
             // gbEnfants
             // 
@@ -635,6 +685,36 @@
             this.gbEnfants.Text = "Enfants";
             this.gbEnfants.Visible = false;
             // 
+            // listeEnfants
+            // 
+            this.listeEnfants.FormattingEnabled = true;
+            this.listeEnfants.Location = new System.Drawing.Point(6, 255);
+            this.listeEnfants.Name = "listeEnfants";
+            this.listeEnfants.Size = new System.Drawing.Size(324, 106);
+            this.listeEnfants.TabIndex = 77;
+            // 
+            // btnEnfant
+            // 
+            this.btnEnfant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnEnfant.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnfant.Location = new System.Drawing.Point(87, 206);
+            this.btnEnfant.Name = "btnEnfant";
+            this.btnEnfant.Size = new System.Drawing.Size(183, 36);
+            this.btnEnfant.TabIndex = 70;
+            this.btnEnfant.Text = "Ajouter l\'enfant";
+            this.btnEnfant.UseVisualStyleBackColor = false;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(249, 119);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(72, 20);
+            this.radioButton4.TabIndex = 67;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Garçon";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -647,29 +727,12 @@
             this.label9.TabIndex = 67;
             this.label9.Text = "Enfants:";
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.Location = new System.Drawing.Point(14, 176);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(74, 16);
-            label10.TabIndex = 67;
-            label10.Text = "Remarque:";
-            // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(155, 173);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(166, 22);
             this.textBox4.TabIndex = 69;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(155, 91);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(166, 22);
-            this.textBox5.TabIndex = 74;
             // 
             // radioButton3
             // 
@@ -682,43 +745,12 @@
             this.radioButton3.Text = "Fille";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // textBox5
             // 
-            label11.AutoSize = true;
-            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.Location = new System.Drawing.Point(14, 122);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(46, 16);
-            label11.TabIndex = 75;
-            label11.Text = "Sexe:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label12.Location = new System.Drawing.Point(14, 150);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(122, 16);
-            label12.TabIndex = 68;
-            label12.Text = "Date Naissance:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label13.Location = new System.Drawing.Point(14, 94);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(64, 16);
-            label13.TabIndex = 73;
-            label13.Text = "Prenom:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 145);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
-            this.dateTimePicker2.TabIndex = 70;
-            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.textBox5.Location = new System.Drawing.Point(155, 91);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(166, 22);
+            this.textBox5.TabIndex = 74;
             // 
             // textBox6
             // 
@@ -727,26 +759,13 @@
             this.textBox6.Size = new System.Drawing.Size(166, 22);
             this.textBox6.TabIndex = 72;
             // 
-            // label14
+            // dateTimePicker2
             // 
-            label14.AutoSize = true;
-            label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label14.Location = new System.Drawing.Point(14, 66);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(43, 16);
-            label14.TabIndex = 71;
-            label14.Text = "Nom:";
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(249, 119);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(72, 20);
-            this.radioButton4.TabIndex = 67;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Garçon";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.dateTimePicker2.Location = new System.Drawing.Point(155, 145);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
+            this.dateTimePicker2.TabIndex = 70;
+            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // numNbEnfants
             // 
@@ -770,25 +789,6 @@
             0,
             0});
             this.numNbEnfants.Visible = false;
-            // 
-            // btnEnfant
-            // 
-            this.btnEnfant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEnfant.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEnfant.Location = new System.Drawing.Point(87, 206);
-            this.btnEnfant.Name = "btnEnfant";
-            this.btnEnfant.Size = new System.Drawing.Size(183, 36);
-            this.btnEnfant.TabIndex = 70;
-            this.btnEnfant.Text = "Ajouter l\'enfant";
-            this.btnEnfant.UseVisualStyleBackColor = false;
-            // 
-            // listeEnfants
-            // 
-            this.listeEnfants.FormattingEnabled = true;
-            this.listeEnfants.Location = new System.Drawing.Point(6, 255);
-            this.listeEnfants.Name = "listeEnfants";
-            this.listeEnfants.Size = new System.Drawing.Size(324, 106);
-            this.listeEnfants.TabIndex = 77;
             // 
             // lblNbEnfants
             // 
@@ -888,13 +888,13 @@
         private System.Windows.Forms.MaskedTextBox tbCellulaire;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbConjoint;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton rbHConjoint;
+        private System.Windows.Forms.TextBox tbPrenomConjoint;
+        private System.Windows.Forms.RadioButton rbFConjoint;
+        private System.Windows.Forms.DateTimePicker dpDateNaissanceConjoint;
+        private System.Windows.Forms.TextBox tbNomConjoint;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbRemarqueConjoint;
         private System.Windows.Forms.GroupBox gbEnfants;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;

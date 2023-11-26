@@ -43,6 +43,7 @@ namespace projetFinal.Options
         {
             bool binValide = true;
 
+            /* Vérification de l'abonné principal */
             if (tbNom.Text == "")
             {
                 errMessage.SetError(tbNom,"Tous les éléments en gras sont obligatoires");
@@ -173,6 +174,57 @@ namespace projetFinal.Options
                 codePostal = tbCodePostal.Text.Remove(3,1);
             }
 
+            /* Vérifications du conjoint */
+            char sexeConjoint = 'N';
+            if (cbTypesAbo.SelectedIndex == 2)
+            {
+                if (tbNomConjoint.Text.Trim() == "")
+                {
+                    errMessage.SetError(tbNomConjoint,"Tous les éléments en gras sont obligatoires");
+                    binValide = false;
+                }
+                else
+                {
+                    errMessage.SetError(tbNomConjoint,"");
+                }
+
+                if (tbPrenomConjoint.Text.Trim() == "")
+                {
+                    errMessage.SetError(tbPrenomConjoint, "Tous les éléments en gras sont obligatoires");
+                    binValide = false;
+                }
+                else
+                {
+                    errMessage.SetError(tbPrenomConjoint, "");
+                }
+
+                if (rbFConjoint.Checked == false && rbHConjoint.Checked == false)
+                {
+                    errMessage.SetError(rbHConjoint, "Veuillez sélectionner l'une des options");
+                    errMessage.SetError(rbFConjoint, "Veuillez sélectionner l'une des options");
+                    binValide = false;
+                }
+                else
+                {
+                    errMessage.SetError(rbHConjoint, "");
+                    errMessage.SetError(rbFConjoint, "");
+                    if (rbFConjoint.Checked)
+                        sexe = 'F';
+                    if (rbHConjoint.Checked)
+                        sexe = 'H';
+                }
+
+                if (dpDateNaissanceConjoint.Value.Date.AddYears(18) > DateTime.Today)
+                {
+                    errMessage.SetError(dpDateNaissanceConjoint, "L'abonné doit avoir au moins 18 ans");
+                    binValide = false;
+                }
+                else
+                {
+                    errMessage.SetError(dpDateNaissanceConjoint, "");
+                }
+            }
+
             // Si toutes les valeurs sont acceptées
             if (binValide == true)
             {
@@ -219,21 +271,40 @@ namespace projetFinal.Options
 
                 dataContext.Abonnements.InsertOnSubmit(abonnement);
 
+                // Créer le conjoint avec infos
+                if (cbTypesAbo.SelectedIndex == 2)
+                {
+                    string idConjoint = Regex.Replace(tbNom.Text.Trim(), @"\d", "") + numSequence + sexeConjoint + "0";
+
+                    Dependants conjoint = new Dependants
+                    {
+                        Id = idConjoint,
+                        Nom = tbNom.Text.Trim(),
+                        Prenom = tbPrenom.Text.Trim(),
+                        Sexe = sexeConjoint.ToString(),
+                        DateNaissance = dpDateNaissanceConjoint.Value,
+                        IdAbonnement = idAbonnement,
+                        Remarque = tbRemarque.Text.Trim()
+                    };
+                    dataContext.Dependants.InsertOnSubmit(conjoint);
+                }
+
                 using (var porteeTransaction = new TransactionScope())
                 {
                     // enregistre le contrat dans la base de données
                     try
                     {
                         dataContext.SubmitChanges();
-                        MessageBox.Show("L'abonnement " + idAbonnement + " a été enregistré.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        this.Refresh();
+                        if (cbTypesAbo.SelectedIndex == 0 || cbTypesAbo.SelectedIndex == 1)
+                            MessageBox.Show("L'abonnement " + idAbonnement + " et  a été enregistré.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                            MessageBox.Show("L'abonnement " + idAbonnement + " et le(s) dépendant(s) ont été enregistrés.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         porteeTransaction.Complete();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Impossible de modifier la base de données");
+                        MessageBox.Show(ex.Message, "Impossible de modifier la base de données", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
