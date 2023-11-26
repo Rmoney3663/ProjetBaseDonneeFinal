@@ -34,23 +34,23 @@
             System.Windows.Forms.Label remarqueLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InscriptionPartieJouee));
             this.label1 = new System.Windows.Forms.Label();
-            this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idComboBox = new System.Windows.Forms.ComboBox();
-            this.terrainsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomComboBox = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.partiesJoueesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.remarqueTextBox = new System.Windows.Forms.TextBox();
             this.btnConfirmer = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.partiesJoueesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.terrainsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             idLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             remarqueLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partiesJoueesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idLabel
@@ -97,10 +97,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "L’inscription d’une partie de golf jouée";
             // 
-            // abonnementsBindingSource
-            // 
-            this.abonnementsBindingSource.DataSource = typeof(projetFinal.Abonnements);
-            // 
             // idComboBox
             // 
             this.idComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.abonnementsBindingSource, "Id", true));
@@ -110,10 +106,6 @@
             this.idComboBox.Name = "idComboBox";
             this.idComboBox.Size = new System.Drawing.Size(209, 21);
             this.idComboBox.TabIndex = 5;
-            // 
-            // terrainsBindingSource
-            // 
-            this.terrainsBindingSource.DataSource = typeof(projetFinal.Terrains);
             // 
             // nomComboBox
             // 
@@ -148,10 +140,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Pointage:";
             // 
-            // partiesJoueesBindingSource
-            // 
-            this.partiesJoueesBindingSource.DataSource = typeof(projetFinal.PartiesJouees);
-            // 
             // remarqueTextBox
             // 
             this.remarqueTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.partiesJoueesBindingSource, "Remarque", true));
@@ -177,6 +165,18 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // partiesJoueesBindingSource
+            // 
+            this.partiesJoueesBindingSource.DataSource = typeof(projetFinal.PartiesJouees);
+            // 
+            // terrainsBindingSource
+            // 
+            this.terrainsBindingSource.DataSource = typeof(projetFinal.Terrains);
+            // 
+            // abonnementsBindingSource
+            // 
+            this.abonnementsBindingSource.DataSource = typeof(projetFinal.Abonnements);
+            // 
             // InscriptionPartieJouee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,10 +197,10 @@
             this.Name = "InscriptionPartieJouee";
             this.Text = "InscriptionPartieJouee";
             this.Load += new System.EventHandler(this.InscriptionPartieJouee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partiesJoueesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.terrainsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -147,6 +147,131 @@ namespace projetFinal.GestionEmploye
                     };
                     dataContext.Employes.InsertOnSubmit(newEmploye);
                     dataContext.SubmitChanges();
+
+                    int largestNumber2 = dataContext.Services.Max(services => services.No) + 1;
+                    switch ((int)noTypeEmployeComboBox.SelectedValue)
+                    {
+                        case 1:
+                            Services newServices1 = new Services
+                            {
+                                No = largestNumber2,
+                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices1);
+                            dataContext.SubmitChanges();
+
+                            Services newServices2 = new Services
+                            {
+                                No = largestNumber2 +1,
+                                TypeService = "Restaurant pour un employé Restaurant",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices2);
+                            dataContext.SubmitChanges();
+
+                            Services newServices3 = new Services
+                            {
+                                No = largestNumber2 +2,
+                                TypeService = "Leçon de golf pour un employé professeur de golf",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices3);
+                            dataContext.SubmitChanges();
+                            break;
+                        case 2:
+                            Services newServices21 = new Services
+                            {
+                                No = largestNumber2,
+                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices21);
+                            dataContext.SubmitChanges();
+
+                            Services newServices22 = new Services
+                            {
+                                No = largestNumber2 + 1,
+                                TypeService = "Restaurant pour un employé Restaurant",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices22);
+                            dataContext.SubmitChanges();
+
+                            Services newServices23 = new Services
+                            {
+                                No = largestNumber2 + 2,
+                                TypeService = "Leçon de golf pour un employé professeur de golf",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices23);
+                            dataContext.SubmitChanges();
+                            break;
+                        case 3:
+                            Services newServices31 = new Services
+                            {
+                                No = largestNumber2,
+                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices31);
+                            dataContext.SubmitChanges();
+
+                            Services newServices32 = new Services
+                            {
+                                No = largestNumber2 + 1,
+                                TypeService = "Restaurant pour un employé Restaurant",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices32);
+                            dataContext.SubmitChanges();
+
+                            Services newServices33 = new Services
+                            {
+                                No = largestNumber2 + 2,
+                                TypeService = "Leçon de golf pour un employé professeur de golf",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices33);
+                            dataContext.SubmitChanges();
+                            break;
+                        case 4:
+                           
+                            break;
+                        case 5:
+                            Services newServices5 = new Services
+                            {
+                                No = largestNumber2,
+                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices5);
+                            dataContext.SubmitChanges();
+                            break;
+                        case 6:
+                            Services newServices6 = new Services
+                            {
+                                No = largestNumber2 + 1,
+                                TypeService = "Restaurant pour un employé Restaurant",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices6);
+                            dataContext.SubmitChanges();
+                            break;
+                        case 7:
+                            Services newServices7 = new Services
+                            {
+                                No = largestNumber2 + 2,
+                                TypeService = "Leçon de golf pour un employé professeur de golf",
+                                NoEmploye = largestNumber
+                            };
+                            dataContext.Services.InsertOnSubmit(newServices7);
+                            dataContext.SubmitChanges();
+                            break;
+                        default:
+                            MessageBox.Show("Le type d'employe n'est pas existant", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
                     MessageBox.Show("Employee ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
