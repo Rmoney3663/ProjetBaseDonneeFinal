@@ -88,7 +88,7 @@
         <classShapeMoniker Id="5ee4f1a5-f900-4d73-a677-cfdca5f680a5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.406252 : 6.375); (5.406252 : 5.52089680989583); (5.94791666666667 : 5.52089680989583 : JumpStart); (6.11458333333333 : 5.52089680989583 : JumpEnd); (6.125 : 5.52089680989583); (6.125 : 5.41189697265625); (9.625 : 5.41189697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.406252 : 6.375); (5.406252 : 5.52089680989583); (5.94791666666667 : 5.52089680989583 : JumpStart); (6.11458333333333 : 5.52089680989583 : JumpEnd); (6.125 : 5.52089680989583); (6.125 : 5.41189697265625); (6.16666666666667 : 5.41189697265625 : JumpStart); (6.33333333333333 : 5.41189697265625 : JumpEnd); (9.625 : 5.41189697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/Abonnements/Abonnements_PartiesJouees" />
       <nodes>
         <classShapeMoniker Id="543223a5-9e48-455b-9659-0ee79a2459cd" />
@@ -109,7 +109,7 @@
         <classShapeMoniker Id="543223a5-9e48-455b-9659-0ee79a2459cd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 7.625); (2.125 : 6.28125); (3.31162272135417 : 6.28125 : JumpStart); (3.58333333333333 : 6.28125 : JumpEnd); (3.69945412820513 : 6.28125 : JumpStart); (3.86612079487179 : 6.28125 : JumpEnd); (5.32291866666667 : 6.28125 : JumpStart); (5.48958533333333 : 6.28125 : JumpEnd); (6.875 : 6.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.125 : 7.625); (2.125 : 6.28125); (3.31162272135417 : 6.28125 : JumpStart); (3.58333333333333 : 6.28125 : JumpEnd); (3.69945412820513 : 6.28125 : JumpStart); (3.86612079487179 : 6.28125 : JumpEnd); (6.875 : 6.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/Provinces/Provinces_Employes" />
       <nodes>
         <classShapeMoniker Id="80b0f4f0-6e2f-4b85-9dde-8147a88f4012" />
