@@ -143,7 +143,6 @@ namespace projetFinal.GestionEmploye
                         SalaireHoraire = numSalaire.Value,
                         NoTypeEmploye = (int)noTypeEmployeComboBox.SelectedValue,
                         Remarque = remarqueTextBox.Text
-
                     };
                     dataContext.Employes.InsertOnSubmit(newEmploye);
                     dataContext.SubmitChanges();
