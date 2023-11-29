@@ -45,6 +45,22 @@ namespace projetFinal.Options
                 nomComboBox.DataSource = query2.ToList();
                 nomComboBox.DisplayMember = "DisplayName";
                 nomComboBox.ValueMember = "Id";
+
+                var query3 = from partie in dataContext.PartiesJouees
+                                join terrain in dataContext.Terrains on partie.NoTerrain equals terrain.No
+                                join abonnement in dataContext.Abonnements on partie.IdAbonnement equals abonnement.Id
+                                select new
+                                {
+                                    partie.DatePartie,
+                                    partie.Pointage,
+                                    partie.Remarque,
+                                    Terrains = terrain.Nom,
+                                    Abonnements = abonnement.Prenom + ' ' + abonnement.Nom,
+                                };
+
+                partiesJoueesBindingSource.DataSource = query3.ToList();
+                partiesJoueesDataGridView.DataSource = partiesJoueesBindingSource;
+
             }
             catch (Exception ex)
             {
@@ -79,6 +95,22 @@ namespace projetFinal.Options
                     };
                     dataContext.PartiesJouees.InsertOnSubmit(newJeu);
                     dataContext.SubmitChanges();
+
+
+                    var query3 = from partie in dataContext.PartiesJouees
+                                 join terrain in dataContext.Terrains on partie.NoTerrain equals terrain.No
+                                 join abonnement in dataContext.Abonnements on partie.IdAbonnement equals abonnement.Id
+                                 select new
+                                 {
+                                     partie.DatePartie,
+                                     partie.Pointage,
+                                     partie.Remarque,
+                                     Terrains = terrain.Nom,
+                                     Abonnements = abonnement.Prenom + ' ' + abonnement.Nom,
+                                 };
+
+                    partiesJoueesBindingSource.DataSource = query3.ToList();
+                    partiesJoueesDataGridView.DataSource = partiesJoueesBindingSource;
                     MessageBox.Show("Partie jouée ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
                 }
