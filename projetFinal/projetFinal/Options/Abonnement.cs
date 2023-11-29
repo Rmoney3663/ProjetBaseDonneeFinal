@@ -339,6 +339,7 @@ namespace projetFinal.Options
 
                         Controls.Clear();
                         InitializeComponent();
+                        Abonnement_Load(null,null);
 
                         porteeTransaction.Complete();
                     }

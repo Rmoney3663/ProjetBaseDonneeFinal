@@ -32,12 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgAbonnements = new System.Windows.Forms.DataGridView();
             this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReabonnement = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbRemarque = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomComplet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.dgAbonnements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAbonnements.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3});
+            this.NomComplet});
             this.dgAbonnements.DataSource = this.abonnementsBindingSource;
             this.dgAbonnements.Location = new System.Drawing.Point(12, 59);
             this.dgAbonnements.Name = "dgAbonnements";
@@ -73,22 +73,6 @@
             // abonnementsBindingSource
             // 
             this.abonnementsBindingSource.DataSource = typeof(projetFinal.Abonnements);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id de l\'abonné principal";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NomComplet";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nom complet";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // label1
             // 
@@ -130,6 +114,22 @@
             this.tbRemarque.Size = new System.Drawing.Size(214, 22);
             this.tbRemarque.TabIndex = 53;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id de l\'abonné principal";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // NomComplet
+            // 
+            this.NomComplet.DataPropertyName = "NomComplet";
+            this.NomComplet.HeaderText = "Nom complet";
+            this.NomComplet.MinimumWidth = 6;
+            this.NomComplet.Name = "NomComplet";
+            this.NomComplet.ReadOnly = true;
+            // 
             // Reabonnement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -154,11 +154,12 @@
 
         private System.Windows.Forms.BindingSource abonnementsBindingSource;
         private System.Windows.Forms.DataGridView dgAbonnements;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReabonnement;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbRemarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomComplet;
     }
 }

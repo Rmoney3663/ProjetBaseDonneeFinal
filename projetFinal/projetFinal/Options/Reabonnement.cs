@@ -58,6 +58,7 @@ namespace projetFinal.Options
 
                     Controls.Clear();
                     InitializeComponent();
+                    Reabonnement_Load(null, null);
 
                     porteeTransaction.Complete();
                 }
