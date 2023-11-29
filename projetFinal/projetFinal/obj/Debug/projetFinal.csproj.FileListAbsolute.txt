@@ -49,3 +49,6 @@ S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.Ge
 S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.CoreCompileInputs.cache
 S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.exe
 S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.pdb
+C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionAbonnements.frmListeAbonnements.resources
+C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Abonnement.resources
+C:\Users\r.pruteanu\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.InscriptionDepense.resources

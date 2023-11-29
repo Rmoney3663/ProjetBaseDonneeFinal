@@ -93,20 +93,44 @@ namespace projetFinal.GestionEmploye
                 error = true;
             }
 
-            if (CheckCodePostal(codePostalTextBox.Text))
-            {               
+            string codePostal = "";
+            if (tbCodePostal.Text.Trim().Length != 7)
+            {
+                errMessage.SetError(tbCodePostal, "Veuillez remplir cette zone de texte correctement");
                 error = true;
+            }
+            else
+            {                
+                errMessage.SetError(tbCodePostal, "");
+                codePostal = tbCodePostal.Text.Remove(3, 1);              
+
             }
 
-            if (CheckPhone(telephoneTextBox.Text))
+            string telephone = new string(tbTelephone.Text.Where(char.IsDigit).ToArray());
+            if (telephone.Length != 10)
             {
+                errMessage.SetError(tbTelephone, "Veuillez remplir cette zone de texte correctement");
                 error = true;
+            }
+            else
+            {
+                errMessage.SetError(tbTelephone, "");
             }
 
-            if (CheckCell(cellulaireTextBox.Text))
+            string cellulaire = new string(tbCellulaire.Text.Where(char.IsDigit).ToArray());
+            decimal noCellulaire = 0;
+            if (cellulaire.Length != 10 && cellulaire.Length != 0)
             {
+                errMessage.SetError(tbCellulaire, "Veuillez remplir cette zone de texte correctement ou la vider");
                 error = true;
             }
+            else
+            {
+                errMessage.SetError(tbCellulaire, "");
+                if (cellulaire != "")
+                    noCellulaire = decimal.Parse(cellulaire);
+            }
+
             if (CheckEmail(courrielTextBox.Text))
             {
                 error = true;
@@ -136,141 +160,20 @@ namespace projetFinal.GestionEmploye
                         Rue = rueTextBox.Text,
                         Ville = villeTextBox.Text,
                         IdProvince = (string)idProvinceComboBox.SelectedValue,
-                        CodePostal = codePostalTextBox.Text,
-                        Telephone = decimal.Parse(telephoneTextBox.Text),
-                        Cellulaire = decimal.Parse(cellulaireTextBox.Text),
+                        CodePostal = codePostal,
+                        Telephone = decimal.Parse(telephone),
                         Courriel = courrielTextBox.Text,
                         SalaireHoraire = numSalaire.Value,
                         NoTypeEmploye = (int)noTypeEmployeComboBox.SelectedValue,
                         Remarque = remarqueTextBox.Text
                     };
+
+                    if (noCellulaire != 0)
+                        newEmploye.Cellulaire = decimal.Parse(cellulaire);
+
                     dataContext.Employes.InsertOnSubmit(newEmploye);
                     dataContext.SubmitChanges();
-
-                    int largestNumber2 = dataContext.Services.Max(services => services.No) + 1;
-                    switch ((int)noTypeEmployeComboBox.SelectedValue)
-                    {
-                        case 1:
-                            Services newServices1 = new Services
-                            {
-                                No = largestNumber2,
-                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices1);
-                            dataContext.SubmitChanges();
-
-                            Services newServices2 = new Services
-                            {
-                                No = largestNumber2 +1,
-                                TypeService = "Restaurant pour un employé Restaurant",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices2);
-                            dataContext.SubmitChanges();
-
-                            Services newServices3 = new Services
-                            {
-                                No = largestNumber2 +2,
-                                TypeService = "Leçon de golf pour un employé professeur de golf",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices3);
-                            dataContext.SubmitChanges();
-                            break;
-                        case 2:
-                            Services newServices21 = new Services
-                            {
-                                No = largestNumber2,
-                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices21);
-                            dataContext.SubmitChanges();
-
-                            Services newServices22 = new Services
-                            {
-                                No = largestNumber2 + 1,
-                                TypeService = "Restaurant pour un employé Restaurant",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices22);
-                            dataContext.SubmitChanges();
-
-                            Services newServices23 = new Services
-                            {
-                                No = largestNumber2 + 2,
-                                TypeService = "Leçon de golf pour un employé professeur de golf",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices23);
-                            dataContext.SubmitChanges();
-                            break;
-                        case 3:
-                            Services newServices31 = new Services
-                            {
-                                No = largestNumber2,
-                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices31);
-                            dataContext.SubmitChanges();
-
-                            Services newServices32 = new Services
-                            {
-                                No = largestNumber2 + 1,
-                                TypeService = "Restaurant pour un employé Restaurant",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices32);
-                            dataContext.SubmitChanges();
-
-                            Services newServices33 = new Services
-                            {
-                                No = largestNumber2 + 2,
-                                TypeService = "Leçon de golf pour un employé professeur de golf",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices33);
-                            dataContext.SubmitChanges();
-                            break;
-                        case 4:
-                           
-                            break;
-                        case 5:
-                            Services newServices5 = new Services
-                            {
-                                No = largestNumber2,
-                                TypeService = "Magasin Pro Shop pour un employé Pro Shop",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices5);
-                            dataContext.SubmitChanges();
-                            break;
-                        case 6:
-                            Services newServices6 = new Services
-                            {
-                                No = largestNumber2 + 1,
-                                TypeService = "Restaurant pour un employé Restaurant",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices6);
-                            dataContext.SubmitChanges();
-                            break;
-                        case 7:
-                            Services newServices7 = new Services
-                            {
-                                No = largestNumber2 + 2,
-                                TypeService = "Leçon de golf pour un employé professeur de golf",
-                                NoEmploye = largestNumber
-                            };
-                            dataContext.Services.InsertOnSubmit(newServices7);
-                            dataContext.SubmitChanges();
-                            break;
-                        default:
-                            MessageBox.Show("Le type d'employe n'est pas existant", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            break;
-                    }
+                   
                     MessageBox.Show("Employee ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -278,9 +181,6 @@ namespace projetFinal.GestionEmploye
                     MessageBox.Show("Error pour ajouter employé: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-
-
         }
 
         private void AjouterEmploye_Load(object sender, EventArgs e)
@@ -351,102 +251,7 @@ namespace projetFinal.GestionEmploye
                 }
             }            
         }
-
-        private bool CheckCodePostal(string CodePostal)
-        {
-            if (CodePostal.Trim() == "")
-            {
-                errMessage.SetError(codePostalTextBox, "Le code postal de l'employé ne peut pas être vide");
-                return true;
-            }
-            else
-            {
-                if (CodePostal.Trim().Length == 6)
-                {
-                    Regex canadianPostalCodeRegex = new Regex("^[A-Za-z]\\d[A-Za-z]\\d[A-Za-z]\\d$");
-
-                    if (canadianPostalCodeRegex.IsMatch(CodePostal.Trim()))
-                    {
-                        
-                        return false;
-                    }
-                    else
-                    {
-                        errMessage.SetError(codePostalTextBox, "Le code postal n'est pas au format A#A#A#.");
-                        return true;
-                    }
-                }
-                else
-                {
-                    errMessage.SetError(codePostalTextBox, "La longueur du code postal doit être de 6 caractères.");
-                    return true;
-                }
-
-            }
-        }
-
-        private bool CheckPhone(string NumberPhone)
-        {
-            if (NumberPhone.Trim() == "")
-            {
-                errMessage.SetError(telephoneTextBox, "Le numero de telephone de l'employé ne peut pas être vide");
-                return true;
-            }
-            else
-            {
-                if (NumberPhone.Trim().Length == 10)
-                {
-                    Regex phonenumber = new Regex("^\\d{10}$");
-
-                    if (phonenumber.IsMatch(NumberPhone.Trim()))
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        errMessage.SetError(telephoneTextBox, "Le numero de telephone doit contenir seulement des numéros.");
-                        return true;
-                    }
-                }
-                else
-                {
-                    errMessage.SetError(telephoneTextBox, "La longueur du numero de telephone doit être de 10 caractères.");
-                    return true;
-                }
-            }
-        }
-
-        private bool CheckCell(string NumberPhone)
-        {
-            if (NumberPhone.Trim() == "")
-            {
-                errMessage.SetError(cellulaireTextBox, "Le numero de cellulaire de l'employé ne peut pas être vide");
-                return true;
-            }
-            else
-            {
-                if (NumberPhone.Trim().Length == 10)
-                {
-                    Regex phonenumber = new Regex("^\\d{10}$");
-
-                    if (phonenumber.IsMatch(NumberPhone.Trim()))
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        errMessage.SetError(cellulaireTextBox, "Le numero de cellulaire doit contenir seulement des numéros.");
-                        return true;
-                    }
-                }
-                else
-                {
-                    errMessage.SetError(cellulaireTextBox, "La longueur du numero de cellulaire doit être de 10 caractères.");
-                    return true;
-                }
-            }
-        }
-
+               
         private bool CheckEmail(string Email)
         {
             if (Email.Trim() == "")

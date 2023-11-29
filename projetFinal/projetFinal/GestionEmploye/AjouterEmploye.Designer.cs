@@ -57,15 +57,15 @@
             this.rueTextBox = new System.Windows.Forms.TextBox();
             this.villeTextBox = new System.Windows.Forms.TextBox();
             this.idProvinceComboBox = new System.Windows.Forms.ComboBox();
-            this.codePostalTextBox = new System.Windows.Forms.TextBox();
-            this.telephoneTextBox = new System.Windows.Forms.TextBox();
-            this.cellulaireTextBox = new System.Windows.Forms.TextBox();
             this.courrielTextBox = new System.Windows.Forms.TextBox();
             this.numSalaire = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.noTypeEmployeComboBox = new System.Windows.Forms.ComboBox();
             this.remarqueTextBox = new System.Windows.Forms.TextBox();
             this.errMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbTelephone = new System.Windows.Forms.MaskedTextBox();
+            this.tbCellulaire = new System.Windows.Forms.MaskedTextBox();
+            this.tbCodePostal = new System.Windows.Forms.MaskedTextBox();
             prenomLabel = new System.Windows.Forms.Label();
             nomLabel = new System.Windows.Forms.Label();
             motDePasseLabel = new System.Windows.Forms.Label();
@@ -348,30 +348,6 @@
             this.idProvinceComboBox.Size = new System.Drawing.Size(121, 21);
             this.idProvinceComboBox.TabIndex = 20;
             // 
-            // codePostalTextBox
-            // 
-            this.codePostalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "CodePostal", true));
-            this.codePostalTextBox.Location = new System.Drawing.Point(319, 193);
-            this.codePostalTextBox.Name = "codePostalTextBox";
-            this.codePostalTextBox.Size = new System.Drawing.Size(121, 20);
-            this.codePostalTextBox.TabIndex = 22;
-            // 
-            // telephoneTextBox
-            // 
-            this.telephoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Telephone", true));
-            this.telephoneTextBox.Location = new System.Drawing.Point(112, 229);
-            this.telephoneTextBox.Name = "telephoneTextBox";
-            this.telephoneTextBox.Size = new System.Drawing.Size(121, 20);
-            this.telephoneTextBox.TabIndex = 24;
-            // 
-            // cellulaireTextBox
-            // 
-            this.cellulaireTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Cellulaire", true));
-            this.cellulaireTextBox.Location = new System.Drawing.Point(319, 229);
-            this.cellulaireTextBox.Name = "cellulaireTextBox";
-            this.cellulaireTextBox.Size = new System.Drawing.Size(121, 20);
-            this.cellulaireTextBox.TabIndex = 26;
-            // 
             // courrielTextBox
             // 
             this.courrielTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employesBindingSource, "Courriel", true));
@@ -434,11 +410,41 @@
             // 
             this.errMessage.ContainerControl = this;
             // 
+            // tbTelephone
+            // 
+            this.tbTelephone.Location = new System.Drawing.Point(112, 229);
+            this.tbTelephone.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTelephone.Mask = "(000) 000-0000";
+            this.tbTelephone.Name = "tbTelephone";
+            this.tbTelephone.Size = new System.Drawing.Size(122, 20);
+            this.tbTelephone.TabIndex = 54;
+            // 
+            // tbCellulaire
+            // 
+            this.tbCellulaire.Location = new System.Drawing.Point(319, 229);
+            this.tbCellulaire.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCellulaire.Mask = "(000) 000-0000";
+            this.tbCellulaire.Name = "tbCellulaire";
+            this.tbCellulaire.Size = new System.Drawing.Size(121, 20);
+            this.tbCellulaire.TabIndex = 56;
+            // 
+            // tbCodePostal
+            // 
+            this.tbCodePostal.Location = new System.Drawing.Point(319, 193);
+            this.tbCodePostal.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCodePostal.Mask = "L0L 0L0";
+            this.tbCodePostal.Name = "tbCodePostal";
+            this.tbCodePostal.Size = new System.Drawing.Size(121, 20);
+            this.tbCodePostal.TabIndex = 57;
+            // 
             // AjouterEmploye
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 522);
+            this.Controls.Add(this.tbCodePostal);
+            this.Controls.Add(this.tbCellulaire);
+            this.Controls.Add(this.tbTelephone);
             this.Controls.Add(remarqueLabel);
             this.Controls.Add(this.remarqueTextBox);
             this.Controls.Add(noTypeEmployeLabel);
@@ -448,11 +454,8 @@
             this.Controls.Add(courrielLabel);
             this.Controls.Add(this.courrielTextBox);
             this.Controls.Add(cellulaireLabel);
-            this.Controls.Add(this.cellulaireTextBox);
             this.Controls.Add(telephoneLabel);
-            this.Controls.Add(this.telephoneTextBox);
             this.Controls.Add(codePostalLabel);
-            this.Controls.Add(this.codePostalTextBox);
             this.Controls.Add(idProvinceLabel);
             this.Controls.Add(this.idProvinceComboBox);
             this.Controls.Add(villeLabel);
@@ -502,14 +505,14 @@
         private System.Windows.Forms.TextBox rueTextBox;
         private System.Windows.Forms.TextBox villeTextBox;
         private System.Windows.Forms.ComboBox idProvinceComboBox;
-        private System.Windows.Forms.TextBox codePostalTextBox;
-        private System.Windows.Forms.TextBox telephoneTextBox;
-        private System.Windows.Forms.TextBox cellulaireTextBox;
         private System.Windows.Forms.TextBox courrielTextBox;
         private System.Windows.Forms.NumericUpDown numSalaire;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox noTypeEmployeComboBox;
         private System.Windows.Forms.TextBox remarqueTextBox;
         private System.Windows.Forms.ErrorProvider errMessage;
+        private System.Windows.Forms.MaskedTextBox tbTelephone;
+        private System.Windows.Forms.MaskedTextBox tbCellulaire;
+        private System.Windows.Forms.MaskedTextBox tbCodePostal;
     }
 }
