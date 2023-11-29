@@ -34,25 +34,55 @@ namespace projetFinal.Options
                 idComboBox.DataSource = query.ToList();
                 idComboBox.DisplayMember = "DisplayName";
                 idComboBox.ValueMember = "Id";
-                /*
-                var serviceList = new[]
+
+                var noTypeEmploye = dataContext.Employes
+                     .Where(employ => employ.No == LoginUser)
+                     .Select(employ => employ.NoTypeEmploye)
+                     .FirstOrDefault();
+
+                IEnumerable<object> comboBoxItems = Enumerable.Empty<object>();
+
+                switch (noTypeEmploye)
                 {
-                    new { Id = 1, DisplayName = "Magasin Pro Shop pour un employé Pro Shop" },
-                    new { Id = 2, DisplayName = "Restaurant pour un employé Restaurant" },
-                    new { Id = 3, DisplayName = "Leçon de golf pour un employé professeur de golf" }
-                };*/
+                    case 1:
+                    case 2:
+                    case 3:
+                        comboBoxItems = new[]
+                        {
+                            new { Id = 1, DisplayName = "Magasin Pro Shop pour un employé Pro Shop" },
+                            new { Id = 2, DisplayName = "Restaurant pour un employé Restaurant" },
+                            new { Id = 3, DisplayName = "Leçon de golf pour un employé professeur de golf" }
+                        };
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        comboBoxItems = new[]
+                        {
+                            new { Id = 1, DisplayName = "Magasin Pro Shop pour un employé Pro Shop" }
+                        };
+                        break;
+                    case 6:
+                        comboBoxItems = new[]
+                        {
+                            new { Id = 2, DisplayName = "Restaurant pour un employé Restaurant" }
+                        };
+                        break;
+                    case 7:
+                        comboBoxItems = new[]
+                        {
+                            new { Id = 3, DisplayName = "Leçon de golf pour un employé professeur de golf" }
+                        };
+                        break;
+                    default:
+                        MessageBox.Show("Le type d'employe n'est pas existant", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                }
 
-                var query2 = from services in dataContext.Services
-                             where services.NoEmploye == LoginUser
-                             select new
-                             {
-                                 Id = services.No,
-                                 DisplayName = services.TypeService
-                             };
-
-                typeServiceComboBox.DataSource = query2.ToList();
+                typeServiceComboBox.DataSource = comboBoxItems.ToList();
                 typeServiceComboBox.DisplayMember = "DisplayName";
                 typeServiceComboBox.ValueMember = "Id";
+
             }
             catch (Exception ex)
             {
