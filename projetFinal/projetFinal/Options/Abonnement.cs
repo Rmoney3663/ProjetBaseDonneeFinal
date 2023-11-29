@@ -337,7 +337,10 @@ namespace projetFinal.Options
                             else
                                 MessageBox.Show("L'abonnement " + idAbonnement + " et le(s) dépendant(s) ont été enregistrés.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            porteeTransaction.Complete();
+                        Controls.Clear();
+                        InitializeComponent();
+
+                        porteeTransaction.Complete();
                     }
                     catch (Exception ex)
                     {

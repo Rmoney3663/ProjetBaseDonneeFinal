@@ -36,3 +36,4 @@ C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\
 C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Abonnement.resources
 C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionAbonnements.frmListeAbonnements.resources
 C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.InscriptionPartieJouee.resources
+C:\Users\14383\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Reabonnement.resources
