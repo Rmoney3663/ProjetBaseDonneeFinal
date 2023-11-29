@@ -37,6 +37,11 @@ namespace projetFinal.Options
                             select uneProvince;
 
             provincesBindingSource.DataSource = provinces;
+
+
+            // Set up liste enfants
+
+            listeEnfants.DisplayMember = "Prenom";
         }
         
         private void btnAjout_Click(object sender, EventArgs e)
@@ -176,7 +181,7 @@ namespace projetFinal.Options
 
             /* Vérifications du conjoint */
             char sexeConjoint = 'N';
-            if (cbTypesAbo.SelectedIndex == 2)
+            if (cbTypesAbo.SelectedIndex >= 2)
             {
                 if (tbNomConjoint.Text.Trim() == "")
                 {
@@ -216,13 +221,31 @@ namespace projetFinal.Options
 
                 if (dpDateNaissanceConjoint.Value.Date.AddYears(18) > DateTime.Today)
                 {
-                    errMessage.SetError(dpDateNaissanceConjoint, "L'abonné doit avoir au moins 18 ans");
+                    errMessage.SetError(dpDateNaissanceConjoint, "Le conjoint doit avoir au moins 18 ans");
                     binValide = false;
                 }
                 else
                 {
                     errMessage.SetError(dpDateNaissanceConjoint, "");
                 }
+            }
+
+            /* Vérifications des enfants */
+
+            if (cbTypesAbo.SelectedIndex == 3 && listeEnfants.CheckedItems.Count != 1)
+            {
+                errMessage.SetError(listeEnfants, "Vous devez ajouter et cocher un seul enfant dans la liste");
+                binValide = false;
+            }
+            else if (cbTypesAbo.SelectedIndex == 4 && listeEnfants.CheckedItems.Count != 2)
+            {
+                errMessage.SetError(listeEnfants, "Vous devez ajouter et cocher deux enfants dans la liste");
+                binValide = false;
+            }
+            else if (cbTypesAbo.SelectedIndex == 5 && listeEnfants.CheckedItems.Count != numNbEnfants.Value)
+            {
+                errMessage.SetError(listeEnfants, "Vous devez ajouter et cocher le nombre d'enfants que vous avez indiqué plus haut");
+                binValide = false;
             }
 
             // Si toutes les valeurs sont acceptées
@@ -254,7 +277,7 @@ namespace projetFinal.Options
                      Nom = tbNom.Text,
                      Prenom = tbPrenom.Text,
                      Sexe = sexe.ToString(),
-                     DateNaissance = dpNaissance.Value,
+                     DateNaissance = dpNaissance.Value.Date,
                      NoCivique = int.Parse(numNoCivique.Value.ToString()),
                      Rue = tbRue.Text,
                      Ville = tbVille.Text,
@@ -272,7 +295,7 @@ namespace projetFinal.Options
                 dataContext.Abonnements.InsertOnSubmit(abonnement);
 
                 // Créer le conjoint avec infos
-                if (cbTypesAbo.SelectedIndex == 2)
+                if (cbTypesAbo.SelectedIndex >= 2)
                 {
                     string idConjoint = Regex.Replace(tbNom.Text.Trim(), @"\d", "") + numSequence + sexeConjoint + "0";
 
@@ -282,7 +305,7 @@ namespace projetFinal.Options
                         Nom = tbNomConjoint.Text.Trim(),
                         Prenom = tbPrenomConjoint.Text.Trim(),
                         Sexe = sexeConjoint.ToString(),
-                        DateNaissance = dpDateNaissanceConjoint.Value,
+                        DateNaissance = dpDateNaissanceConjoint.Value.Date,
                         IdAbonnement = idAbonnement,
                         Remarque = tbRemarqueConjoint.Text.Trim()
                     };
@@ -291,16 +314,30 @@ namespace projetFinal.Options
 
                 using (var porteeTransaction = new TransactionScope())
                 {
-                    // enregistre le contrat dans la base de données
+                    // enregistre l'abonnement et les dépendants dans la base de données
                     try
                     {
-                        dataContext.SubmitChanges();
-                        if (cbTypesAbo.SelectedIndex == 0 || cbTypesAbo.SelectedIndex == 1)
-                            MessageBox.Show("L'abonnement " + idAbonnement + " et  a été enregistré.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            MessageBox.Show("L'abonnement " + idAbonnement + " et le(s) dépendant(s) ont été enregistrés.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Ajouter les enfants
+                        if (cbTypesAbo.SelectedIndex >= 3)
+                        {
+                            int noEnfant = 1;
+                            foreach (Dependants enfant in listeEnfants.CheckedItems)
+                            {
+                                enfant.Id = Regex.Replace(tbNom.Text.Trim(), @"\d", "") + numSequence + "E" + noEnfant;
+                                enfant.IdAbonnement = idAbonnement;
 
-                        porteeTransaction.Complete();
+                                dataContext.Dependants.InsertOnSubmit(enfant);
+                                
+                                noEnfant++;
+                            }
+                        }
+                            dataContext.SubmitChanges();
+                            if (cbTypesAbo.SelectedIndex == 0 || cbTypesAbo.SelectedIndex == 1)
+                                MessageBox.Show("L'abonnement " + idAbonnement + " et  a été enregistré.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show("L'abonnement " + idAbonnement + " et le(s) dépendant(s) ont été enregistrés.", "enregistrement de l'abonnement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            porteeTransaction.Complete();
                     }
                     catch (Exception ex)
                     {
@@ -349,6 +386,68 @@ namespace projetFinal.Options
         {
             GestionAbonnements.frmListeAbonnements form = new GestionAbonnements.frmListeAbonnements();
             form.ShowDialog();
+        }
+
+        private void btnEnfant_Click(object sender, EventArgs e)
+        {
+            Dependants enfant = new Dependants();
+            
+            bool binValide = true;
+
+            if (tbNomEnfant.Text.Trim() == "")
+            {
+                errMessage.SetError(tbNomEnfant, "Tous les éléments en gras sont obligatoires");
+                binValide = false;
+            }
+            else
+            {
+                enfant.Nom = tbNomEnfant.Text.Trim();
+                errMessage.SetError(tbNomEnfant, "");
+            }
+
+            if (tbPrenomEnfant.Text.Trim() == "")
+            {
+                errMessage.SetError(tbPrenomEnfant, "Tous les éléments en gras sont obligatoires");
+                binValide = false;
+            }
+            else
+            {
+                enfant.Prenom = tbPrenomEnfant.Text.Trim();
+                errMessage.SetError(tbPrenomEnfant, "");
+            }
+
+            if (rbFEnfant.Checked == false && rbHEnfant.Checked == false)
+            {
+                errMessage.SetError(rbHEnfant, "Veuillez sélectionner l'une des options");
+                errMessage.SetError(rbFEnfant, "Veuillez sélectionner l'une des options");
+                binValide = false;
+            }
+            else
+            {
+                errMessage.SetError(rbHEnfant, "");
+                errMessage.SetError(rbFEnfant, "");
+                if (rbFEnfant.Checked)
+                    enfant.Sexe = "F";
+                if (rbHEnfant.Checked)
+                    enfant.Sexe = "H";
+            }
+
+            if (dpNaissanceEnfant.Value.Date.AddYears(18) <= DateTime.Today || dpNaissanceEnfant.Value.Date.AddYears(1) > DateTime.Today)
+            {
+                errMessage.SetError(dpNaissanceEnfant, "L'enfant doit avoir entre 1 et 17 ans");
+                binValide = false;
+            }
+            else
+            {
+                enfant.DateNaissance = dpNaissanceEnfant.Value.Date;
+                errMessage.SetError(dpNaissanceEnfant, "");
+            }
+
+            if (binValide == true)
+            {
+                enfant.Remarque = tbRemarqueEnfant.Text;
+                listeEnfants.Items.Add (enfant,true);
+            }
         }
     }
 }

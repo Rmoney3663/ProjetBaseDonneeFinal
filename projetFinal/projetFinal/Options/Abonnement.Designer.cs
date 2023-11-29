@@ -87,13 +87,13 @@
             this.gbEnfants = new System.Windows.Forms.GroupBox();
             this.listeEnfants = new System.Windows.Forms.CheckedListBox();
             this.btnEnfant = new System.Windows.Forms.Button();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbHEnfant = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.tbRemarqueEnfant = new System.Windows.Forms.TextBox();
+            this.rbFEnfant = new System.Windows.Forms.RadioButton();
+            this.tbPrenomEnfant = new System.Windows.Forms.TextBox();
+            this.tbNomEnfant = new System.Windows.Forms.TextBox();
+            this.dpNaissanceEnfant = new System.Windows.Forms.DateTimePicker();
             this.numNbEnfants = new System.Windows.Forms.NumericUpDown();
             this.lblNbEnfants = new System.Windows.Forms.Label();
             cellulaireLabel = new System.Windows.Forms.Label();
@@ -495,7 +495,7 @@
             // 
             this.btnAjout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAjout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjout.Location = new System.Drawing.Point(90, 670);
+            this.btnAjout.Location = new System.Drawing.Point(99, 670);
             this.btnAjout.Name = "btnAjout";
             this.btnAjout.Size = new System.Drawing.Size(330, 58);
             this.btnAjout.TabIndex = 50;
@@ -507,7 +507,7 @@
             // 
             this.btnVoirAbonnements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnVoirAbonnements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoirAbonnements.Location = new System.Drawing.Point(459, 670);
+            this.btnVoirAbonnements.Location = new System.Drawing.Point(468, 670);
             this.btnVoirAbonnements.Name = "btnVoirAbonnements";
             this.btnVoirAbonnements.Size = new System.Drawing.Size(330, 58);
             this.btnVoirAbonnements.TabIndex = 51;
@@ -593,7 +593,7 @@
             this.gbConjoint.Controls.Add(label4);
             this.gbConjoint.Location = new System.Drawing.Point(539, 12);
             this.gbConjoint.Name = "gbConjoint";
-            this.gbConjoint.Size = new System.Drawing.Size(336, 222);
+            this.gbConjoint.Size = new System.Drawing.Size(362, 222);
             this.gbConjoint.TabIndex = 57;
             this.gbConjoint.TabStop = false;
             this.gbConjoint.Text = "Conjoint(e)";
@@ -666,21 +666,21 @@
             // 
             this.gbEnfants.Controls.Add(this.listeEnfants);
             this.gbEnfants.Controls.Add(this.btnEnfant);
-            this.gbEnfants.Controls.Add(this.radioButton4);
+            this.gbEnfants.Controls.Add(this.rbHEnfant);
             this.gbEnfants.Controls.Add(label10);
             this.gbEnfants.Controls.Add(this.label9);
-            this.gbEnfants.Controls.Add(this.textBox4);
-            this.gbEnfants.Controls.Add(this.radioButton3);
-            this.gbEnfants.Controls.Add(this.textBox5);
+            this.gbEnfants.Controls.Add(this.tbRemarqueEnfant);
+            this.gbEnfants.Controls.Add(this.rbFEnfant);
+            this.gbEnfants.Controls.Add(this.tbPrenomEnfant);
             this.gbEnfants.Controls.Add(label14);
-            this.gbEnfants.Controls.Add(this.textBox6);
+            this.gbEnfants.Controls.Add(this.tbNomEnfant);
             this.gbEnfants.Controls.Add(label11);
-            this.gbEnfants.Controls.Add(this.dateTimePicker2);
+            this.gbEnfants.Controls.Add(this.dpNaissanceEnfant);
             this.gbEnfants.Controls.Add(label12);
             this.gbEnfants.Controls.Add(label13);
             this.gbEnfants.Location = new System.Drawing.Point(539, 281);
             this.gbEnfants.Name = "gbEnfants";
-            this.gbEnfants.Size = new System.Drawing.Size(336, 371);
+            this.gbEnfants.Size = new System.Drawing.Size(362, 371);
             this.gbEnfants.TabIndex = 67;
             this.gbEnfants.TabStop = false;
             this.gbEnfants.Text = "Enfants";
@@ -704,17 +704,18 @@
             this.btnEnfant.TabIndex = 70;
             this.btnEnfant.Text = "Ajouter l\'enfant";
             this.btnEnfant.UseVisualStyleBackColor = false;
+            this.btnEnfant.Click += new System.EventHandler(this.btnEnfant_Click);
             // 
-            // radioButton4
+            // rbHEnfant
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(249, 119);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(72, 20);
-            this.radioButton4.TabIndex = 67;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Garçon";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbHEnfant.AutoSize = true;
+            this.rbHEnfant.Location = new System.Drawing.Point(249, 119);
+            this.rbHEnfant.Name = "rbHEnfant";
+            this.rbHEnfant.Size = new System.Drawing.Size(72, 20);
+            this.rbHEnfant.TabIndex = 67;
+            this.rbHEnfant.TabStop = true;
+            this.rbHEnfant.Text = "Garçon";
+            this.rbHEnfant.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -728,45 +729,45 @@
             this.label9.TabIndex = 67;
             this.label9.Text = "Enfants:";
             // 
-            // textBox4
+            // tbRemarqueEnfant
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 173);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 22);
-            this.textBox4.TabIndex = 69;
+            this.tbRemarqueEnfant.Location = new System.Drawing.Point(155, 173);
+            this.tbRemarqueEnfant.Name = "tbRemarqueEnfant";
+            this.tbRemarqueEnfant.Size = new System.Drawing.Size(166, 22);
+            this.tbRemarqueEnfant.TabIndex = 69;
             // 
-            // radioButton3
+            // rbFEnfant
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(157, 119);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 20);
-            this.radioButton3.TabIndex = 76;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Fille";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbFEnfant.AutoSize = true;
+            this.rbFEnfant.Location = new System.Drawing.Point(157, 119);
+            this.rbFEnfant.Name = "rbFEnfant";
+            this.rbFEnfant.Size = new System.Drawing.Size(53, 20);
+            this.rbFEnfant.TabIndex = 76;
+            this.rbFEnfant.TabStop = true;
+            this.rbFEnfant.Text = "Fille";
+            this.rbFEnfant.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // tbPrenomEnfant
             // 
-            this.textBox5.Location = new System.Drawing.Point(155, 91);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(166, 22);
-            this.textBox5.TabIndex = 74;
+            this.tbPrenomEnfant.Location = new System.Drawing.Point(155, 91);
+            this.tbPrenomEnfant.Name = "tbPrenomEnfant";
+            this.tbPrenomEnfant.Size = new System.Drawing.Size(166, 22);
+            this.tbPrenomEnfant.TabIndex = 74;
             // 
-            // textBox6
+            // tbNomEnfant
             // 
-            this.textBox6.Location = new System.Drawing.Point(155, 63);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(166, 22);
-            this.textBox6.TabIndex = 72;
+            this.tbNomEnfant.Location = new System.Drawing.Point(155, 63);
+            this.tbNomEnfant.Name = "tbNomEnfant";
+            this.tbNomEnfant.Size = new System.Drawing.Size(166, 22);
+            this.tbNomEnfant.TabIndex = 72;
             // 
-            // dateTimePicker2
+            // dpNaissanceEnfant
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 145);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 22);
-            this.dateTimePicker2.TabIndex = 70;
-            this.dateTimePicker2.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dpNaissanceEnfant.Location = new System.Drawing.Point(155, 145);
+            this.dpNaissanceEnfant.Name = "dpNaissanceEnfant";
+            this.dpNaissanceEnfant.Size = new System.Drawing.Size(166, 22);
+            this.dpNaissanceEnfant.TabIndex = 70;
+            this.dpNaissanceEnfant.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // numNbEnfants
             // 
@@ -808,7 +809,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 740);
+            this.ClientSize = new System.Drawing.Size(913, 740);
             this.Controls.Add(this.lblNbEnfants);
             this.Controls.Add(this.numNbEnfants);
             this.Controls.Add(this.gbEnfants);
@@ -898,12 +899,12 @@
         private System.Windows.Forms.TextBox tbRemarqueConjoint;
         private System.Windows.Forms.GroupBox gbEnfants;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TextBox tbRemarqueEnfant;
+        private System.Windows.Forms.RadioButton rbFEnfant;
+        private System.Windows.Forms.TextBox tbPrenomEnfant;
+        private System.Windows.Forms.TextBox tbNomEnfant;
+        private System.Windows.Forms.DateTimePicker dpNaissanceEnfant;
+        private System.Windows.Forms.RadioButton rbHEnfant;
         private System.Windows.Forms.NumericUpDown numNbEnfants;
         private System.Windows.Forms.Button btnEnfant;
         private System.Windows.Forms.CheckedListBox listeEnfants;
