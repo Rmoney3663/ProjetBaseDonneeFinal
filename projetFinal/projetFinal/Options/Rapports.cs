@@ -12,9 +12,15 @@ namespace projetFinal.Options
 {
     public partial class Rapports : Form
     {
+        private DataClasses1DataContext dataContext = new DataClasses1DataContext();
         public Rapports()
         {
             InitializeComponent();
+        }
+
+        private void Rapports_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
