@@ -51,6 +51,10 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nbMontant = new System.Windows.Forms.Label();
+            this.nbOb = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             remarqueLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -111,6 +115,7 @@
             this.idComboBox.Name = "idComboBox";
             this.idComboBox.Size = new System.Drawing.Size(240, 21);
             this.idComboBox.TabIndex = 7;
+            this.idComboBox.SelectedIndexChanged += new System.EventHandler(this.idComboBox_SelectedIndexChanged);
             // 
             // remarqueTextBox
             // 
@@ -277,11 +282,55 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(131, 478);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "$ Dépense Totale ";
+            // 
+            // nbMontant
+            // 
+            this.nbMontant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nbMontant.Location = new System.Drawing.Point(14, 477);
+            this.nbMontant.Name = "nbMontant";
+            this.nbMontant.Size = new System.Drawing.Size(111, 17);
+            this.nbMontant.TabIndex = 20;
+            this.nbMontant.Text = "0";
+            this.nbMontant.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nbOb
+            // 
+            this.nbOb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nbOb.Location = new System.Drawing.Point(387, 477);
+            this.nbOb.Name = "nbOb";
+            this.nbOb.Size = new System.Drawing.Size(111, 17);
+            this.nbOb.TabIndex = 22;
+            this.nbOb.Text = "0";
+            this.nbOb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(504, 478);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(151, 15);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "$ Dépense Obligatoire";
+            // 
             // InscriptionDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 522);
+            this.Controls.Add(this.nbOb);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.nbMontant);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.depensesDataGridView);
             this.Controls.Add(this.btnConfirmer);
             this.Controls.Add(label3);
@@ -326,5 +375,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label nbMontant;
+        private System.Windows.Forms.Label nbOb;
+        private System.Windows.Forms.Label label6;
     }
 }

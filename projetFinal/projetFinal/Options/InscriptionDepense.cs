@@ -84,10 +84,17 @@ namespace projetFinal.Options
                 typeServiceComboBox.DisplayMember = "DisplayName";
                 typeServiceComboBox.ValueMember = "Id";
 
+                var selectedValue = idComboBox.SelectedValue;
+                var id = "";
+                if (selectedValue != null)
+                {
+                    id = selectedValue.ToString();
+                }
                 var query2 = from depense in dataContext.Depenses
                              join service in dataContext.Services on depense.NoService equals service.No
                              join abonnement in dataContext.Abonnements on depense.IdAbonnement equals abonnement.Id
                              join employe in dataContext.Employes on service.NoEmploye equals employe.No
+                             where depense.IdAbonnement == id
                              select new
                              {
                                  depense.DateDepense,
@@ -100,6 +107,32 @@ namespace projetFinal.Options
 
                 depensesBindingSource.DataSource = query2.ToList();
                 depensesDataGridView.DataSource = depensesBindingSource;
+                if (query2 != null && query2.Count() > 0)
+                {
+                    decimal totalMontant = query2.Sum(item => item.Montant);
+                    nbMontant.Text = totalMontant.ToString();
+                }
+                else
+                {
+                    nbMontant.Text = "0";
+                }
+
+                var query3 = from abonnement in dataContext.Abonnements
+                             join prix in dataContext.PrixDepensesAbonnements on abonnement.NoTypeAbonnement equals prix.NoTypeAbonnement
+                             where abonnement.Id == id
+                             select new
+                             {
+                                 prix.DepensesObligatoires
+                             };
+                if (query3 != null && query3.Count() > 0)
+                {
+                    decimal totalDepensesObligatoires = query3.Sum(item => item.DepensesObligatoires);
+                    nbOb.Text = totalDepensesObligatoires.ToString();
+                }
+                else
+                {
+                    nbOb.Text = "0";
+                }
 
             }
             catch (Exception ex)
@@ -185,6 +218,60 @@ namespace projetFinal.Options
             {
                 MessageBox.Show("Error loading data: " + ex.Message);
             }
+        }
+
+        private void idComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedValue = idComboBox.SelectedValue;
+            var id = "";
+            if (selectedValue != null)
+            {
+                id = selectedValue.ToString();
+            }
+            var query2 = from depense in dataContext.Depenses
+                         join service in dataContext.Services on depense.NoService equals service.No
+                         join abonnement in dataContext.Abonnements on depense.IdAbonnement equals abonnement.Id
+                         join employe in dataContext.Employes on service.NoEmploye equals employe.No
+                         where depense.IdAbonnement == id
+                         select new
+                         {
+                             depense.DateDepense,
+                             depense.Montant,
+                             depense.Remarque,
+                             Services = service.TypeService,
+                             Abonnements = abonnement.Prenom + ' ' + abonnement.Nom,
+                             NomEmployer = employe.Prenom + ' ' + employe.Nom,
+                         };
+
+            depensesBindingSource.DataSource = query2.ToList();
+            depensesDataGridView.DataSource = depensesBindingSource;
+            if (query2 != null && query2.Count() > 0)
+            {
+                decimal totalMontant = query2.Sum(item => item.Montant) ;
+                nbMontant.Text = totalMontant.ToString();
+            }else
+            {
+                nbMontant.Text = "0";
+            }
+
+            var query3 = from abonnement in dataContext.Abonnements
+                         join prix in dataContext.PrixDepensesAbonnements on abonnement.NoTypeAbonnement equals prix.NoTypeAbonnement
+                         where abonnement.Id == id
+                         select new
+                         {
+                             prix.DepensesObligatoires
+                         };
+            if (query3 != null && query3.Count() > 0)
+            {
+                decimal totalDepensesObligatoires = query3.Sum(item => item.DepensesObligatoires);
+                nbOb.Text = totalDepensesObligatoires.ToString();
+            }
+            else
+            {
+                nbOb.Text = "0";
+            }
+          
+
         }
     }
 }
