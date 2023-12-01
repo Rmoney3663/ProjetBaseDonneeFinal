@@ -151,7 +151,7 @@ namespace projetFinal
             formulaire.TopLevel = false;
             formulaire.FormBorderStyle = FormBorderStyle.None;
             formulaire.Dock = DockStyle.Fill;
-
+            formulaire.LoginUser = LoginUser;
             splitContainer.Panel2.Controls.Clear();
             splitContainer.Panel2.Controls.Add(formulaire);
 
@@ -223,6 +223,7 @@ namespace projetFinal
                         btnMiseAJourAbo.Enabled = true;
                         btnModifPrixEtDepenses.Enabled = true;
                         btnInscriptionPartie.Enabled = true;
+                        btnInscriptionDepense.Enabled = true;
                         btnVisualisationRapports.Enabled = true;
                         btnVisualisationStats.Enabled = true;
                         break;
@@ -231,6 +232,7 @@ namespace projetFinal
                         btnModifPrixEtDepenses.Enabled = true;
                         btnVisualisationRapports.Enabled = true;
                         btnVisualisationStats.Enabled = true;
+                        btnInscriptionDepense.Enabled = true;
                         break;
                     case 3:
                         btnAbonnement.Enabled = true;
@@ -238,6 +240,7 @@ namespace projetFinal
                         btnMiseAJourAbo.Enabled = true;
                         btnModifPrixEtDepenses.Enabled = true;
                         btnInscriptionPartie.Enabled = true;
+                        btnInscriptionDepense.Enabled = true;
                         btnVisualisationRapports.Enabled = true;
                         btnVisualisationStats.Enabled = true;
                         break;
@@ -253,7 +256,8 @@ namespace projetFinal
                     case 6:
                         btnInscriptionDepense.Enabled = true;
                         break;
-                    case 7:                       
+                    case 7:
+                        btnInscriptionDepense.Enabled = true;
                         break;
                     default:
                         MessageBox.Show("Le type d'employe n'est pas existant", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);

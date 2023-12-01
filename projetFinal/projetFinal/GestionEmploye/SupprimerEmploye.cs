@@ -30,7 +30,7 @@ namespace projetFinal.GestionEmploye
                     var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet employé ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
-                    {
+                    {     
                         dataContext.Employes.DeleteOnSubmit(employeeToDelete);
                         dataContext.SubmitChanges();
                         MessageBox.Show("Employee supprimer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

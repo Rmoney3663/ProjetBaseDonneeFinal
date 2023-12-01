@@ -182,6 +182,9 @@
     <EmbeddedResource Include="Options\GestionEmployes.resx">
       <DependentUpon>GestionEmployes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\InscriptionDepense.resx">
+      <DependentUpon>InscriptionDepense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\InscriptionPartieJouee.resx">
       <DependentUpon>InscriptionPartieJouee.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,8 +240,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModifPrixDepenses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
