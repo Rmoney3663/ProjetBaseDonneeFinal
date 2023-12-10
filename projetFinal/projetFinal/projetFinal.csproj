@@ -188,6 +188,9 @@
     <EmbeddedResource Include="Options\InscriptionPartieJouee.resx">
       <DependentUpon>InscriptionPartieJouee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\MiseAJourAbos.resx">
+      <DependentUpon>MiseAJourAbos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\ModifPrixDepenses.resx">
       <DependentUpon>ModifPrixDepenses.cs</DependentUpon>
     </EmbeddedResource>
