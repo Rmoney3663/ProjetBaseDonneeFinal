@@ -61,3 +61,27 @@ C:\Users\C.Chagnon\OneDrive - Cegep Gerald-Godin\session 5\Base de données\proj
 C:\Users\C.Chagnon\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.CoreCompileInputs.cache
 C:\Users\C.Chagnon\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.exe
 C:\Users\C.Chagnon\OneDrive - Cegep Gerald-Godin\session 5\Base de données\projet2\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.pdb
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.exe.config
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.exe
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\bin\Debug\projetFinal.pdb
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.AssemblyReference.cache
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionAbonnements.frmListeAbonnements.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Connexion.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.AjouterEmploye.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.ModifierEmploye.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.GestionEmploye.SupprimerEmploye.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Menu.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Choix.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Abonnement.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.GestionEmployes.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.InscriptionDepense.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.InscriptionPartieJouee.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.MiseAJourAbos.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.ModifPrixDepenses.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Rapports.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Options.Reabonnement.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.Properties.Resources.resources
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.GenerateResource.cache
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.csproj.CoreCompileInputs.cache
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.exe
+S:\ProjetBaseDonneeFinal\projetFinal\projetFinal\obj\Debug\projetFinal.pdb
