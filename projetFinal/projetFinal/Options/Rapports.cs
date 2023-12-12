@@ -164,7 +164,7 @@ namespace projetFinal.Options
                             {
                                 DatePartie = parties.DatePartie,
                                 Pointage = parties.Pointage,
-                                Abonnement = abonnement.Prenom + " " + abonnement.Nom
+                                Abonnements = abonnement.Prenom + " " + abonnement.Nom
                             };
 
                 partiesJoueesDataGridView.DataSource = query.ToList();
