@@ -54,7 +54,28 @@ namespace projetFinal.Options
             AnnecomboBox.DataSource = years.Select(year => new { Year = year }).ToList();
 
 
+            var query3 = from terrains in dataContext.Terrains
+                         select new
+                         {
+                             DisplayName = terrains.Nom,
+                             No = terrains.No
+                         };
 
+            TerraincomboBox.DataSource = query3.ToList();
+            TerraincomboBox.DisplayMember = "DisplayName";
+            TerraincomboBox.ValueMember = "No";
+
+
+            comboBox2.DataSource = query2.ToList();
+            comboBox2.DisplayMember = "DisplayName";
+            comboBox2.ValueMember = "No";
+
+            comboBox1.DisplayMember = "Year"; 
+            comboBox1.ValueMember = "Year";
+            var distinctYearsQuery = (from partie in dataContext.PartiesJouees
+                                      select partie.DatePartie.Year).Distinct();
+            comboBox1.DataSource = distinctYearsQuery.Select(year => new { Year = year }).ToList();
+            
         }
 
         private void employeeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,8 +99,6 @@ namespace projetFinal.Options
 
                 depensesDataGridView.DataSource = query.ToList();
             }
-
-
         }
 
         private void abonnementcomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,7 +123,6 @@ namespace projetFinal.Options
 
                 abondataGridView.DataSource = query.ToList();
             }
-
         }
 
         private void AnnecomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,9 +147,76 @@ namespace projetFinal.Options
 
                 dataGridView2.DataSource = query.ToList();
             }
+        }
+
+        private void TerraincomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TerraincomboBox.SelectedValue != null)
+            {
+                dynamic selectedTerrain = TerraincomboBox.SelectedItem;
+                int selectedTerrainId = selectedTerrain.No;
+
+                var query = from terrains in dataContext.Terrains
+                            join parties in dataContext.PartiesJouees on terrains.No equals parties.NoTerrain
+                            join abonnement in dataContext.Abonnements on parties.IdAbonnement equals abonnement.Id
+                            where terrains.No == selectedTerrainId
+                            select new
+                            {
+                                DatePartie = parties.DatePartie,
+                                Pointage = parties.Pointage,
+                                Abonnement = abonnement.Prenom + " " + abonnement.Nom
+                            };
+
+                partiesJoueesDataGridView.DataSource = query.ToList();
+            }
 
 
+        }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedValue != null)
+            {
+                dynamic selectedAbonne = comboBox2.SelectedItem;
+                string selectedAbonneId = selectedAbonne.No;
+
+                var query = from terrains in dataContext.Terrains
+                            join parties in dataContext.PartiesJouees on terrains.No equals parties.NoTerrain
+                            join abonnement in dataContext.Abonnements on parties.IdAbonnement equals abonnement.Id
+                            where abonnement.Id == selectedAbonneId
+                            select new
+                            {
+                                DatePartie = parties.DatePartie,
+                                Pointage = parties.Pointage,
+                                Terrains = terrains.Nom
+                            };
+
+                partiesDataGridView.DataSource = query.ToList();
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue != null)
+            {
+                dynamic selectedAnne = comboBox1.SelectedItem;
+                int selectedAnnee = selectedAnne.Year;
+
+                var query = from terrains in dataContext.Terrains
+                            join parties in dataContext.PartiesJouees on terrains.No equals parties.NoTerrain
+                            join abonnement in dataContext.Abonnements on parties.IdAbonnement equals abonnement.Id
+                            where parties.DatePartie.Year == selectedAnnee
+                            select new
+                            {
+                                DatePartie = parties.DatePartie,
+                                Pointage = parties.Pointage,
+                                Terrains = terrains.Nom,
+                                Abonnement = abonnement.Prenom + " " + abonnement.Nom
+                            };
+
+                dataGridView1.DataSource = query.ToList();
+            }
         }
     }
 }
