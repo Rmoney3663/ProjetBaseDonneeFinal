@@ -44,8 +44,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1283, 795);
-            this.splitContainer1.SplitterDistance = 376;
+            this.splitContainer1.Size = new System.Drawing.Size(1327, 795);
+            this.splitContainer1.SplitterDistance = 388;
             this.splitContainer1.TabIndex = 0;
             // 
             // label1
@@ -62,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 795);
+            this.ClientSize = new System.Drawing.Size(1327, 795);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Menu";
             this.Text = "Menu";

@@ -197,6 +197,9 @@
     <EmbeddedResource Include="Options\Reabonnement.resx">
       <DependentUpon>Reabonnement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\Statistiques.resx">
+      <DependentUpon>Statistiques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

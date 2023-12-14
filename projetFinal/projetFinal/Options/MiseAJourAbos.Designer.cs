@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,33 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.abonnementsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgAbonnements = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneNoCivique = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneRue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneProvince = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.provincesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colonneCodePostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColonneCell = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneCourriel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colonneTypeAbo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typesAbonnementBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colonneRemarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dependantsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgDependants = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEnregistre = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +71,29 @@
             this.remarqueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provincesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typesAbonnementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneNoCivique = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneRue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneProvince = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colonneCodePostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColonneCell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneCourriel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colonneTypeAbo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colonneRemarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.abonnementsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAbonnements)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provincesBindingSource)).BeginInit();
@@ -182,178 +182,13 @@
             this.dgAbonnements.TabIndex = 52;
             this.dgAbonnements.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgAbonnements_DataError);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DateAbonnement";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date de l\'abonnement";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 182;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nom";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nom";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 73;
-            // 
-            // colonnePrenom
-            // 
-            this.colonnePrenom.DataPropertyName = "Prenom";
-            this.colonnePrenom.HeaderText = "Prénom";
-            this.colonnePrenom.MinimumWidth = 6;
-            this.colonnePrenom.Name = "colonnePrenom";
-            this.colonnePrenom.Width = 96;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sexe";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sexe";
-            this.dataGridViewTextBoxColumn5.Items.AddRange(new object[] {
-            "F",
-            "H"});
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateNaissance";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Date de naissance";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 161;
-            // 
-            // colonneNoCivique
-            // 
-            this.colonneNoCivique.DataPropertyName = "NoCivique";
-            this.colonneNoCivique.HeaderText = "Numéro civique";
-            this.colonneNoCivique.MinimumWidth = 6;
-            this.colonneNoCivique.Name = "colonneNoCivique";
-            this.colonneNoCivique.Width = 141;
-            // 
-            // colonneRue
-            // 
-            this.colonneRue.DataPropertyName = "Rue";
-            this.colonneRue.HeaderText = "Rue";
-            this.colonneRue.MinimumWidth = 6;
-            this.colonneRue.Name = "colonneRue";
-            this.colonneRue.Width = 67;
-            // 
-            // colonneVille
-            // 
-            this.colonneVille.DataPropertyName = "Ville";
-            this.colonneVille.HeaderText = "Ville";
-            this.colonneVille.MinimumWidth = 6;
-            this.colonneVille.Name = "colonneVille";
-            this.colonneVille.Width = 68;
-            // 
-            // colonneProvince
-            // 
-            this.colonneProvince.DataPropertyName = "IdProvince";
-            this.colonneProvince.DataSource = this.provincesBindingSource;
-            this.colonneProvince.DisplayMember = "Nom";
-            this.colonneProvince.HeaderText = "Province";
-            this.colonneProvince.MinimumWidth = 6;
-            this.colonneProvince.Name = "colonneProvince";
-            this.colonneProvince.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colonneProvince.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colonneProvince.ValueMember = "Id";
-            this.colonneProvince.Width = 103;
-            // 
             // provincesBindingSource
             // 
             this.provincesBindingSource.DataSource = typeof(projetFinal.Provinces);
             // 
-            // colonneCodePostal
-            // 
-            this.colonneCodePostal.DataPropertyName = "CodePostal";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colonneCodePostal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colonneCodePostal.HeaderText = "Code postal";
-            this.colonneCodePostal.MinimumWidth = 6;
-            this.colonneCodePostal.Name = "colonneCodePostal";
-            this.colonneCodePostal.Width = 118;
-            // 
-            // colonneTel
-            // 
-            this.colonneTel.DataPropertyName = "Telephone";
-            this.colonneTel.HeaderText = "Téléphone";
-            this.colonneTel.MinimumWidth = 6;
-            this.colonneTel.Name = "colonneTel";
-            this.colonneTel.Width = 115;
-            // 
-            // ColonneCell
-            // 
-            this.ColonneCell.DataPropertyName = "Cellulaire";
-            this.ColonneCell.HeaderText = "Cellulaire";
-            this.ColonneCell.MinimumWidth = 6;
-            this.ColonneCell.Name = "ColonneCell";
-            this.ColonneCell.Width = 107;
-            // 
-            // colonneCourriel
-            // 
-            this.colonneCourriel.DataPropertyName = "Courriel";
-            this.colonneCourriel.HeaderText = "Courriel";
-            this.colonneCourriel.MinimumWidth = 6;
-            this.colonneCourriel.Name = "colonneCourriel";
-            this.colonneCourriel.Width = 97;
-            // 
-            // colonneTypeAbo
-            // 
-            this.colonneTypeAbo.DataPropertyName = "NoTypeAbonnement";
-            this.colonneTypeAbo.DataSource = this.typesAbonnementBindingSource;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Blue;
-            this.colonneTypeAbo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colonneTypeAbo.DisplayMember = "Description";
-            this.colonneTypeAbo.HeaderText = "Type d\'abonnement";
-            this.colonneTypeAbo.MinimumWidth = 6;
-            this.colonneTypeAbo.Name = "colonneTypeAbo";
-            this.colonneTypeAbo.ReadOnly = true;
-            this.colonneTypeAbo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colonneTypeAbo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colonneTypeAbo.ValueMember = "No";
-            this.colonneTypeAbo.Width = 167;
-            // 
             // typesAbonnementBindingSource
             // 
             this.typesAbonnementBindingSource.DataSource = typeof(projetFinal.TypesAbonnement);
-            // 
-            // colonneRemarque
-            // 
-            this.colonneRemarque.DataPropertyName = "Remarque";
-            this.colonneRemarque.HeaderText = "Remarque";
-            this.colonneRemarque.MinimumWidth = 6;
-            this.colonneRemarque.Name = "colonneRemarque";
-            this.colonneRemarque.Width = 114;
             // 
             // dependantsBindingSource
             // 
@@ -403,74 +238,6 @@
             this.dgDependants.Size = new System.Drawing.Size(830, 194);
             this.dgDependants.TabIndex = 52;
             this.dgDependants.Validating += new System.ComponentModel.CancelEventHandler(this.dgDependants_Validating);
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Id";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn19.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Nom";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dataGridViewTextBoxColumn20.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn20.HeaderText = "Nom";
-            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Prenom";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Prénom";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Sexe";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Sexe";
-            this.dataGridViewTextBoxColumn22.Items.AddRange(new object[] {
-            "F",
-            "H"});
-            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "DateNaissance";
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn23.HeaderText = "Date de naissance";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "IdAbonnement";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Blue;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn24.HeaderText = "Id de l\'abonnement";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Remarque";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Remarque";
-            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
             // label3
             // 
@@ -640,6 +407,245 @@
             this.typesAbonnementDataGridViewTextBoxColumn.Name = "typesAbonnementDataGridViewTextBoxColumn";
             this.typesAbonnementDataGridViewTextBoxColumn.Width = 149;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DateAbonnement";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Format = "D";
+            dataGridViewCellStyle3.NullValue = null;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date de l\'abonnement";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 182;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nom";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 73;
+            // 
+            // colonnePrenom
+            // 
+            this.colonnePrenom.DataPropertyName = "Prenom";
+            this.colonnePrenom.HeaderText = "Prénom";
+            this.colonnePrenom.MinimumWidth = 6;
+            this.colonnePrenom.Name = "colonnePrenom";
+            this.colonnePrenom.Width = 96;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sexe";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sexe";
+            this.dataGridViewTextBoxColumn5.Items.AddRange(new object[] {
+            "F",
+            "H"});
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn5.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateNaissance";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle5.Format = "D";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date de naissance";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 161;
+            // 
+            // colonneNoCivique
+            // 
+            this.colonneNoCivique.DataPropertyName = "NoCivique";
+            this.colonneNoCivique.HeaderText = "Numéro civique";
+            this.colonneNoCivique.MinimumWidth = 6;
+            this.colonneNoCivique.Name = "colonneNoCivique";
+            this.colonneNoCivique.Width = 141;
+            // 
+            // colonneRue
+            // 
+            this.colonneRue.DataPropertyName = "Rue";
+            this.colonneRue.HeaderText = "Rue";
+            this.colonneRue.MinimumWidth = 6;
+            this.colonneRue.Name = "colonneRue";
+            this.colonneRue.Width = 67;
+            // 
+            // colonneVille
+            // 
+            this.colonneVille.DataPropertyName = "Ville";
+            this.colonneVille.HeaderText = "Ville";
+            this.colonneVille.MinimumWidth = 6;
+            this.colonneVille.Name = "colonneVille";
+            this.colonneVille.Width = 68;
+            // 
+            // colonneProvince
+            // 
+            this.colonneProvince.DataPropertyName = "IdProvince";
+            this.colonneProvince.DataSource = this.provincesBindingSource;
+            this.colonneProvince.DisplayMember = "Nom";
+            this.colonneProvince.HeaderText = "Province";
+            this.colonneProvince.MinimumWidth = 6;
+            this.colonneProvince.Name = "colonneProvince";
+            this.colonneProvince.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colonneProvince.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colonneProvince.ValueMember = "Id";
+            this.colonneProvince.Width = 103;
+            // 
+            // colonneCodePostal
+            // 
+            this.colonneCodePostal.DataPropertyName = "CodePostal";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colonneCodePostal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colonneCodePostal.HeaderText = "Code postal";
+            this.colonneCodePostal.MinimumWidth = 6;
+            this.colonneCodePostal.Name = "colonneCodePostal";
+            this.colonneCodePostal.Width = 118;
+            // 
+            // colonneTel
+            // 
+            this.colonneTel.DataPropertyName = "Telephone";
+            this.colonneTel.HeaderText = "Téléphone";
+            this.colonneTel.MinimumWidth = 6;
+            this.colonneTel.Name = "colonneTel";
+            this.colonneTel.Width = 115;
+            // 
+            // ColonneCell
+            // 
+            this.ColonneCell.DataPropertyName = "Cellulaire";
+            this.ColonneCell.HeaderText = "Cellulaire";
+            this.ColonneCell.MinimumWidth = 6;
+            this.ColonneCell.Name = "ColonneCell";
+            this.ColonneCell.Width = 107;
+            // 
+            // colonneCourriel
+            // 
+            this.colonneCourriel.DataPropertyName = "Courriel";
+            this.colonneCourriel.HeaderText = "Courriel";
+            this.colonneCourriel.MinimumWidth = 6;
+            this.colonneCourriel.Name = "colonneCourriel";
+            this.colonneCourriel.Width = 97;
+            // 
+            // colonneTypeAbo
+            // 
+            this.colonneTypeAbo.DataPropertyName = "NoTypeAbonnement";
+            this.colonneTypeAbo.DataSource = this.typesAbonnementBindingSource;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Blue;
+            this.colonneTypeAbo.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colonneTypeAbo.DisplayMember = "Description";
+            this.colonneTypeAbo.HeaderText = "Type d\'abonnement";
+            this.colonneTypeAbo.MinimumWidth = 6;
+            this.colonneTypeAbo.Name = "colonneTypeAbo";
+            this.colonneTypeAbo.ReadOnly = true;
+            this.colonneTypeAbo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colonneTypeAbo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colonneTypeAbo.ValueMember = "No";
+            this.colonneTypeAbo.Width = 167;
+            // 
+            // colonneRemarque
+            // 
+            this.colonneRemarque.DataPropertyName = "Remarque";
+            this.colonneRemarque.HeaderText = "Remarque";
+            this.colonneRemarque.MinimumWidth = 6;
+            this.colonneRemarque.Name = "colonneRemarque";
+            this.colonneRemarque.Width = 114;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Id";
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewTextBoxColumn19.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Nom";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dataGridViewTextBoxColumn20.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn20.HeaderText = "Nom";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Prenom";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Prénom";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Sexe";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Sexe";
+            this.dataGridViewTextBoxColumn22.Items.AddRange(new object[] {
+            "F",
+            "H"});
+            this.dataGridViewTextBoxColumn22.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "DateNaissance";
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle12.Format = "D";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridViewTextBoxColumn23.HeaderText = "Date de naissance";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "IdAbonnement";
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridViewTextBoxColumn24.HeaderText = "Id de l\'abonnement";
+            this.dataGridViewTextBoxColumn24.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Remarque";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Remarque";
+            this.dataGridViewTextBoxColumn25.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
             // MiseAJourAbos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -696,13 +702,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn typesAbonnementDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource provincesBindingSource;
         private System.Windows.Forms.BindingSource typesAbonnementBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -719,5 +718,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colonneCourriel;
         private System.Windows.Forms.DataGridViewComboBoxColumn colonneTypeAbo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colonneRemarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
     }
 }
