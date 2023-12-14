@@ -194,6 +194,9 @@
     <EmbeddedResource Include="Options\ModifPrixDepenses.resx">
       <DependentUpon>ModifPrixDepenses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\Rapports.resx">
+      <DependentUpon>Rapports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Options\Reabonnement.resx">
       <DependentUpon>Reabonnement.cs</DependentUpon>
     </EmbeddedResource>
