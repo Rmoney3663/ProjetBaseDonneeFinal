@@ -91,7 +91,7 @@ namespace projetFinal.Options
                             where service.NoEmploye == selectedEmployeeId
                             select new
                             {
-                                TypeService = service.TypeService,
+                                Services = service.TypeService,
                                 Montant = depense.Montant,
                                 DateDepense = depense.DateDepense,
                                 Abonnement = abonnement.Prenom + " " + abonnement.Nom

@@ -55,6 +55,8 @@
             this.nbMontant = new System.Windows.Forms.Label();
             this.nbOb = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.nbManq = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             remarqueLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -322,11 +324,33 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "$ Dépense Obligatoire";
             // 
+            // nbManq
+            // 
+            this.nbManq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nbManq.Location = new System.Drawing.Point(185, 506);
+            this.nbManq.Name = "nbManq";
+            this.nbManq.Size = new System.Drawing.Size(111, 17);
+            this.nbManq.TabIndex = 24;
+            this.nbManq.Text = "0";
+            this.nbManq.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(302, 507);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 15);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "$ Dépense Obligatoire Manquant";
+            // 
             // InscriptionDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 522);
+            this.ClientSize = new System.Drawing.Size(667, 543);
+            this.Controls.Add(this.nbManq);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.nbOb);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.nbMontant);
@@ -379,5 +403,7 @@
         private System.Windows.Forms.Label nbMontant;
         private System.Windows.Forms.Label nbOb;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label nbManq;
+        private System.Windows.Forms.Label label7;
     }
 }
