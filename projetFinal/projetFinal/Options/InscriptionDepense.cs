@@ -133,7 +133,20 @@ namespace projetFinal.Options
                 {
                     nbOb.Text = "0";
                 }
-
+                
+                var oblig = nbOb.Text;
+                var mont = nbMontant.Text;
+                decimal intOb = decimal.Parse(oblig);
+                decimal intMont = decimal.Parse(mont);
+                decimal manq = intOb - intMont;
+                if (manq > 0)
+                {
+                    nbManq.Text = manq.ToString();
+                }
+                else
+                {
+                    nbManq.Text = "0";
+                }
             }
             catch (Exception ex)
             {
@@ -270,8 +283,20 @@ namespace projetFinal.Options
             {
                 nbOb.Text = "0";
             }
-          
 
+            var oblig = nbOb.Text;
+            var mont = nbMontant.Text;
+            decimal intOb = decimal.Parse(oblig);
+            decimal intMont = decimal.Parse(mont);
+            decimal manq = intOb - intMont;
+            if (manq > 0)
+            {
+                nbManq.Text = manq.ToString();
+            }
+            else
+            {
+                nbManq.Text = "0";
+            }
         }
     }
 }
