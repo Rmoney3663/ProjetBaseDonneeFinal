@@ -27,6 +27,8 @@ namespace projetFinal.Options
             loadAbosParMois();
             loadPartiesParAnnee();
             loadPartiesParMois();
+            loadDepensesParAnnee();
+            loadDepensesParMois();
         }
 
 
@@ -166,6 +168,7 @@ namespace projetFinal.Options
             var donnees = (from unTerrain in dataContext.Terrains
                            join unePartie in dataContext.PartiesJouees
                            on unTerrain.No equals unePartie.NoTerrain
+                           where unePartie.DatePartie.Year == DateTime.Today.Year
                            select new
                            {
                                terrain = unTerrain.Nom,
@@ -282,6 +285,132 @@ namespace projetFinal.Options
             dgPartiesParMois.Rows[indexTot].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
 
             dgPartiesParMois.ClearSelection();
+        }
+
+        private void loadDepensesParAnnee()
+        {
+            // Charger les dépenses par année
+
+            var donnees = (from unAbonne in dataContext.Abonnements
+                           join uneDepense in dataContext.Depenses
+                           on unAbonne.Id equals uneDepense.IdAbonnement
+                           select new
+                           {
+                               idAbo = unAbonne.Id,
+                               annee = uneDepense.DateDepense.Year,
+                               totDepenses = unAbonne.Depenses
+                               .Where(a => a.DateDepense.Year == uneDepense.DateDepense.Year).Sum(d => d.Montant)
+                           }).GroupBy(parties => new { parties.annee, parties.idAbo, parties.totDepenses });
+
+            foreach (var rangee in donnees.Select(d => d.Key))
+            {
+                dgDepensesParAnnee.Rows.Add(rangee.annee, rangee.idAbo, rangee.totDepenses);
+            }
+
+            double sousTotal = 0;
+            double total = 0;
+            int annee = -1;
+
+            // Sous-totaux
+            foreach (DataGridViewRow row in dgDepensesParAnnee.Rows)
+            {
+
+                if (annee != int.Parse(row.Cells[0].Value.ToString()) && annee != -1)
+                {
+                    dgDepensesParAnnee.Rows.Insert(row.Index, annee, "Sous-total", sousTotal);
+                    sousTotal = 0;
+                    dgDepensesParAnnee.Rows[row.Index - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    dgDepensesParAnnee.Rows[row.Index - 1].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+                    annee = int.Parse(row.Cells[0].Value.ToString());
+                }
+                else
+                {
+                    annee = int.Parse(row.Cells[0].Value.ToString());
+
+                    if (row.Cells[1].Value.ToString() != "Sous-total")
+                    {
+                        total += double.Parse(row.Cells[2].Value.ToString());
+                        sousTotal += double.Parse(row.Cells[2].Value.ToString());
+                    }
+                }
+            }
+
+            // Dernier sous-total
+            int index = dgDepensesParAnnee.Rows.Add(annee, "Sous-total", sousTotal);
+            dgDepensesParAnnee.Rows[index].DefaultCellStyle.BackColor = Color.LightGray;
+            dgDepensesParAnnee.Rows[index].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+
+            // Total
+            int indexTot = dgDepensesParAnnee.Rows.Add("", "TOTAL", total);
+            dgDepensesParAnnee.Rows[indexTot].DefaultCellStyle.BackColor = Color.Black;
+            dgDepensesParAnnee.Rows[indexTot].DefaultCellStyle.ForeColor = Color.White;
+            dgDepensesParAnnee.Rows[indexTot].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+
+            dgDepensesParAnnee.ClearSelection();
+        }
+
+        private void loadDepensesParMois()
+        {
+            // Charger les dépenses par mois
+
+            var donnees = (from unAbonne in dataContext.Abonnements
+                           join uneDepense in dataContext.Depenses
+                           on unAbonne.Id equals uneDepense.IdAbonnement
+                           where uneDepense.DateDepense.Year == DateTime.Today.Year
+                           select new
+                           {
+                               idAbo = unAbonne.Id,
+                               mois = uneDepense.DateDepense.Month,
+                               totDepenses = unAbonne.Depenses
+                               .Where(a => a.DateDepense.Month == uneDepense.DateDepense.Month).Sum(d => d.Montant)
+                           }).GroupBy(parties => new { parties.mois, parties.idAbo, parties.totDepenses });
+
+            foreach (var rangee in donnees.Select(d => d.Key))
+            {
+                string moisEnTexte = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(rangee.mois).ToString().ToUpper();
+                dgDepensesParMois.Rows.Add(moisEnTexte, rangee.idAbo, rangee.totDepenses);
+            }
+
+            double sousTotal = 0;
+            double total = 0;
+            string mois = "";
+
+            // Sous-totaux
+            foreach (DataGridViewRow row in dgDepensesParMois.Rows)
+            {
+
+                if (mois != row.Cells[0].Value.ToString() && mois != "")
+                {
+                    dgDepensesParMois.Rows.Insert(row.Index, mois, "Sous-total", sousTotal);
+                    sousTotal = 0;
+                    dgDepensesParMois.Rows[row.Index - 1].DefaultCellStyle.BackColor = Color.LightGray;
+                    dgDepensesParMois.Rows[row.Index - 1].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+                    mois = row.Cells[0].Value.ToString();
+                }
+                else
+                {
+                    mois = row.Cells[0].Value.ToString();
+
+                    if (row.Cells[1].Value.ToString() != "Sous-total")
+                    {
+                        total += double.Parse(row.Cells[2].Value.ToString());
+                        sousTotal += double.Parse(row.Cells[2].Value.ToString());
+                    }
+                }
+            }
+
+            // Dernier sous-total
+            int index = dgDepensesParMois.Rows.Add(mois, "Sous-total", sousTotal);
+            dgDepensesParMois.Rows[index].DefaultCellStyle.BackColor = Color.LightGray;
+            dgDepensesParMois.Rows[index].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+
+            // Total
+            int indexTot = dgDepensesParMois.Rows.Add("", "TOTAL", total);
+            dgDepensesParMois.Rows[indexTot].DefaultCellStyle.BackColor = Color.Black;
+            dgDepensesParMois.Rows[indexTot].DefaultCellStyle.ForeColor = Color.White;
+            dgDepensesParMois.Rows[indexTot].DefaultCellStyle.Font = new Font(Font, FontStyle.Bold);
+
+            dgDepensesParMois.ClearSelection();
         }
     }
 }
